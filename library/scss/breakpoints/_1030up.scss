@@ -1,0 +1,28 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop.
+
+******************************************************************/
+
+.wrap {
+  width: 1040px;
+}
+
+.page-template-page-promo {
+	// article.hentry {
+	// 	display: flex;
+	// 	// flex-wrap: wrap;
+	// }
+	.entry-content {
+		max-width: 68%;
+	}
+	.right-section {
+		max-width: 32%;
+		margin-top: 2.2em;
+	}
+}

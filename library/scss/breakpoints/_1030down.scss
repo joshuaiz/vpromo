@@ -1,0 +1,30 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop.
+
+******************************************************************/
+
+
+.page-template-page-promo {
+	.entry-content {
+		max-width: 53%;
+		.promo-wrap {
+			margin-top: 1.5em;
+			.promo-review {
+				width: 100%;
+			}
+		}
+		.promo-wrap .promo-rating {
+			margin-bottom: 2em;
+		}
+	}
+	.right-section {
+		// max-width: 32%;
+		margin-top: 2.2em;
+	}
+}
