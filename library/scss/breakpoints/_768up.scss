@@ -19,9 +19,10 @@ GENERAL STYLES
 
 body {}
 
-.page-template-page-promo {
+.page-template-page-promo, .page-template-page-promo-demo {
 	.entry-content {
 		max-width: 53%;
+		flex-wrap: nowrap;
 	}
 	.right-section {
 		// max-width: 32%;
@@ -59,18 +60,28 @@ NAVIGATION STYLES
 *********************/
 .header nav {
 	display: inline-block;
-    left: 60px;
+    // left: 60px;
     position: relative;
+    float: right;
+}
+.user-menu-item {
+	img {
+		position: relative;
+		// float: left;
+		top: 9px;
+		margin-right: 4px;
+	}
 }
 .nav {
 	border: 0;
 	ul {
-		background:$black;
+		// background:$black;
 		margin-top:0;
 	}
 	li {
 		float: left;
 		position: relative;
+		line-height: 44px;
 
 		a {
 			border-bottom: 0;
@@ -80,8 +91,8 @@ NAVIGATION STYLES
 			has the possibility of being a mobile device.
 			*/
 			&:hover, &:focus {
-				color: $white;
-				text-decoration: underline;
+				color: $link-color;
+				// text-decoration: underline;
 			}
 		}
 
@@ -159,6 +170,7 @@ NAVIGATION STYLES
 	}  /* end current highlighters */
 
 } /* end .nav */
+
 
 /*********************
 SIDEBARS & ASIDES
@@ -278,7 +290,16 @@ SIDEBARS & ASIDES
 	.screen-reader-text {}
 
 	/* text widget */
-	.textwidget {}
+	.textwidget {
+		.clef-button-wrapper {
+			float: left;
+			width: 200px !important;
+		}
+		.login-password {
+			clear: both;
+			display: block;
+		}
+	}
 	.widget_text {}
 	.textwidget p {}
 

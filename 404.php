@@ -12,23 +12,22 @@
 
 								<h1><?php _e( 'Epic 404 - Article Not Found', 'bonestheme' ); ?></h1>
 
+								<h2><?php random_sentence(); ?></h2>
+
 							</header>
 
 							<section class="entry-content">
 
-								<p><?php _e( 'The article you were looking for was not found, but maybe try looking again!', 'bonestheme' ); ?></p>
+								<p><?php _e( 'The article you were looking for was not found, maybe searching will help you find it:', 'bonestheme' ); ?></p>
+
+								<p><?php get_search_form(); ?></p>
 
 							</section>
 
-							<section class="search">
-
-									<p><?php get_search_form(); ?></p>
-
-							</section>
 
 							<footer class="article-footer">
 
-									<p><?php _e( 'This is the 404.php template.', 'bonestheme' ); ?></p>
+									
 
 							</footer>
 

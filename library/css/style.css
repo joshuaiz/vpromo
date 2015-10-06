@@ -153,11 +153,11 @@ hr {
  * proper formatting (http://blog.fontdeck.com/post/9037028497/hyphens)
 */
 p {
-  -webkit-hyphens: auto;
-  -epub-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-      hyphens: auto; }
+  -webkit-hyphens: none;
+  -epub-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+      hyphens: none; }
 
 /*
  * Addresses margins set differently in IE6/7.
@@ -492,34 +492,6 @@ FONT FACE (IN YOUR FACE)
   }
 */
 @font-face {
-  font-family: 'san_francisco_textbold';
-  src: url("fonts/sanfranciscotext-bold-webfont.eot");
-  src: url("fonts/sanfranciscotext-bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/sanfranciscotext-bold-webfont.woff2") format("woff2"), url("fonts/sanfranciscotext-bold-webfont.woff") format("woff"), url("fonts/sanfranciscotext-bold-webfont.ttf") format("truetype"), url("fonts/sanfranciscotext-bold-webfont.svg#san_francisco_textbold") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'san_francisco_textregular';
-  src: url("fonts/sanfranciscotext-regular-webfont.eot");
-  src: url("fonts/sanfranciscotext-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/sanfranciscotext-regular-webfont.woff2") format("woff2"), url("fonts/sanfranciscotext-regular-webfont.woff") format("woff"), url("fonts/sanfranciscotext-regular-webfont.ttf") format("truetype"), url("fonts/sanfranciscotext-regular-webfont.svg#san_francisco_textregular") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'san_francisco_textitalic';
-  src: url("fonts/sanfranciscotext-regularitalic-webfont.eot");
-  src: url("fonts/sanfranciscotext-regularitalic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/sanfranciscotext-regularitalic-webfont.woff2") format("woff2"), url("fonts/sanfranciscotext-regularitalic-webfont.woff") format("woff"), url("fonts/sanfranciscotext-regularitalic-webfont.ttf") format("truetype"), url("fonts/sanfranciscotext-regularitalic-webfont.svg#san_francisco_textitalic") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'san_francisco_textthin';
-  src: url("fonts/sanfranciscotext-thin-webfont.eot");
-  src: url("fonts/sanfranciscotext-thin-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/sanfranciscotext-thin-webfont.woff2") format("woff2"), url("fonts/sanfranciscotext-thin-webfont.woff") format("woff"), url("fonts/sanfranciscotext-thin-webfont.ttf") format("truetype"), url("fonts/sanfranciscotext-thin-webfont.svg#san_francisco_textthin") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
   font-family: 'san_francisco_displaybold';
   src: url("fonts/sanfranciscodisplay-bold-webfont.eot");
   src: url("fonts/sanfranciscodisplay-bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/sanfranciscodisplay-bold-webfont.woff2") format("woff2"), url("fonts/sanfranciscodisplay-bold-webfont.woff") format("woff"), url("fonts/sanfranciscodisplay-bold-webfont.ttf") format("truetype"), url("fonts/sanfranciscodisplay-bold-webfont.svg#san_francisco_displaybold") format("svg");
@@ -533,19 +505,38 @@ FONT FACE (IN YOUR FACE)
   font-weight: normal;
   font-style: normal; }
 
+/**
+ * http://applemusic.tumblr.com/
+ */
+/** Ultra Light */
 @font-face {
-  font-family: 'san_francisco_textMdIt';
-  src: url("fonts/sanfranciscotext-mediumitalic-webfont.eot");
-  src: url("fonts/sanfranciscotext-mediumitalic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/sanfranciscotext-mediumitalic-webfont.woff2") format("woff2"), url("fonts/sanfranciscotext-mediumitalic-webfont.woff") format("woff"), url("fonts/sanfranciscotext-mediumitalic-webfont.ttf") format("truetype"), url("fonts/sanfranciscotext-mediumitalic-webfont.svg#san_francisco_textMdIt") format("svg");
-  font-weight: normal;
-  font-style: normal; }
+  font-family: "San Francisco Ultra Light";
+  font-weight: 100;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-ultralight-webfont.woff2"); }
 
+/** Thin */
 @font-face {
-  font-family: 'san_francisco_textsemibold';
-  src: url("fonts/sanfranciscotext-semibold-webfont.eot");
-  src: url("fonts/sanfranciscotext-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/sanfranciscotext-semibold-webfont.woff2") format("woff2"), url("fonts/sanfranciscotext-semibold-webfont.woff") format("woff"), url("fonts/sanfranciscotext-semibold-webfont.ttf") format("truetype"), url("fonts/sanfranciscotext-semibold-webfont.svg#san_francisco_textsemibold") format("svg");
+  font-family: "San Francisco Thin";
+  font-weight: 200;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-thin-webfont.woff2"); }
+
+/** Medium */
+@font-face {
+  font-family: "San Francisco Medium";
   font-weight: normal;
-  font-style: normal; }
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.woff2"); }
+
+/** Semi Bold */
+@font-face {
+  font-family: "San Francisco Semibold";
+  font-weight: 500;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-semibold-webfont.woff2"); }
+
+/** Bold */
+@font-face {
+  font-family: "San Francisco Bold";
+  font-weight: bold;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff2"); }
 
 /*
 The following is based of Typebase:
@@ -981,7 +972,8 @@ and it will create a button dependant on those variables.
   background-color: #55acee; }
 
 .blue:hover {
-  background-color: #6FC6FF; }
+  background-color: #6FC6FF;
+  text-decoration: none; }
 
 .green {
   background-color: #2ecc71; }
@@ -1044,7 +1036,9 @@ button:focus {
   background-color: #205489;
   background: -webkit-gradient(linear, 0 0, 0 100%, from(#205489), to(#036));
   background: -webkit-linear-gradient(top, #205489, #036);
-  background: -o-linear-gradient(top, #205489, #036); }
+  background: -o-linear-gradient(top, #205489, #036);
+  text-decoration: none;
+  color: #ffffff !important; }
 
 .button:hover ~ img {
   display: block;
@@ -1057,8 +1051,7 @@ button:focus {
   -webkit-transform: rotate(-35deg);
   -moz-transform: rotate(-35deg);
   -ms-transform: rotate(-35deg);
-  -o-transform: rotate(-35deg);
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=35); }
+  -o-transform: rotate(-35deg); }
 
 .button:active {
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
@@ -1069,6 +1062,9 @@ button:focus {
 
 .button:focus {
   outline: 0 !important; }
+
+.button:visited {
+  color: #fff; }
 
 /******************************************************************
 Site Name:
@@ -1120,7 +1116,7 @@ textarea,
   border: 0;
   width: 100%;
   max-width: 400px;
-  font-family: "san_francisco_textmedium", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-family: "San Francisco Medium", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   background-color: #eaedf2;
   -webkit-transition: background-color 0.24s ease-in-out;
   transition: background-color 0.24s ease-in-out; }
@@ -1855,15 +1851,21 @@ and will be used across all viewports.
 ******************************************************************/
 /*********************
 GENERAL STYLES
-*********************/
+// *********************/
 body {
-  font-family: "san_francisco_textmedium", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 100%;
+  font-family: "San Francisco Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 105%;
   line-height: 1.5;
   letter-spacing: -0.23px;
-  color: #444;
+  color: #03202F;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
+.ua-safari body {
+  font-family: "san_francisco_textmedium", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+.ua-safari h1, .ua-safari .h1, .ua-safari h2, .ua-safari .h2, .ua-safari h3, .ua-safari .h3, .ua-safari h4, .ua-safari .h4, .ua-safari h5, .ua-safari .h5 {
+  font-family: "san_francisco_displaybold", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 #main2 {
   background-color: #fff;
@@ -1874,102 +1876,35 @@ body {
 p {
   margin: 0 0 1em; }
 
+.intro {
+  font-size: 21px;
+  color: #085177; }
+
+ul li {
+  color: #064464; }
+
 .entry-content img {
   margin-bottom: 0; }
 
-.page-template-page-promo article.hentry {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap; }
+.login-form {
+  margin: 2.2em 0; }
 
-.page-template-page-promo .entry-content {
-  max-width: 68%; }
-
-.promo-player {
-  width: 350px;
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 3px; }
-  .promo-player h4 {
-    margin: 0 0 0.5em;
-    color: #aaa; }
-    .promo-player h4 .cat-number {
-      color: #555; }
-    .promo-player h4 .small-logo {
-      width: 32px;
-      position: relative;
-      top: 3px; }
-
-.promo-wrap .gform_fields {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap; }
-
-.promo-wrap .promo-form .form-left {
-  width: 290px;
-  clear: left;
-  float: left;
-  margin-right: 1em; }
-
-.promo-wrap .promo-form .promo-rating {
-  width: 100px;
-  height: 50px; }
-
-.promo-wrap .promo-form .form-right {
-  float: right;
-  width: 350px; }
-
-.promo-wrap .promo-form .promo-drop-down {
-  margin-bottom: 0 !important; }
-
-.promo-wrap .promo-review {
-  clear: left;
-  width: 54%;
-  margin-right: 1.5em; }
-
-.hentry .promo-header {
-  color: #555;
-  padding: 0; }
-
-.promo-image {
-  float: left;
-  margin-right: 1.2em; }
-  .promo-image img {
-    width: 150px;
-    height: 150px; }
-
-.promo-info {
-  line-height: normal; }
-  .promo-info h2, .promo-info h3, .promo-info h4 {
-    margin: 0 0 0.3em;
-    line-height: normal; }
-  .promo-info .cat-number {
-    color: #0088cc; }
-  .promo-info .promo-artist {
-    color: #004466; }
-  .promo-info .promo-title {
-    color: #777; }
-
-.promo-meta {
-  font-size: .77em;
-  color: #aaa; }
-
-.gform_confirmation_wrapper h2 {
-  margin: 0; }
+.expanded {
+  display: block; }
 
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
 ********************/
 /* for sites that are read right to left (i.e. hebrew) */
+.home .cta-buttons {
+  padding: 1em 0; }
+  .home .cta-buttons .button {
+    display: inline-block;
+    padding: 0.5em 1em; }
+  .home .cta-buttons .button:nth-of-type(1) {
+    margin-right: 1em; }
+
 /* home page */
 /* blog template page */
 /* archive page */
@@ -1979,6 +1914,9 @@ style a page via class
 /* search result page */
 /* no results search page */
 /* individual paged search (i.e. body.search-paged-3) */
+.error404 h2 {
+  color: #0088cc; }
+
 /* 404 page */
 /* single post page */
 /* individual post page by id (i.e. body.postid-73) */
@@ -2004,37 +1942,7 @@ style a page via class
 /* if user is logged in */
 /* paged items like search results or archives */
 /* individual paged (i.e. body.paged-3) */
-.profile .top-avatar {
-  float: left; }
-  .profile .top-avatar img {
-    height: 32px;
-    width: 32px;
-    position: relative;
-    top: 10px;
-    margin-right: 6px; }
-
-.profile .user-avatar {
-  border-top: 1px solid #eee;
-  padding: 1.5em; }
-  .profile .user-avatar h3 {
-    margin-top: 0; }
-  .profile .user-avatar p.description {
-    font-size: 12px;
-    width: 50%; }
-
-.profile .gform_wrapper .top_label .gfield_description {
-  padding: 0; }
-
-.profile .gform_wrapper form li, .profile .gform_wrapper li {
-  margin-bottom: 1.2em; }
-
-.profile .gform_wrapper .ginput_complex.ginput_container.has_first_name.has_middle_name.no_last_name span, .profile .gform_wrapper .ginput_complex.ginput_container.has_first_name.no_middle_name.has_last_name span, .profile .gform_wrapper .ginput_complex.ginput_container.no_first_name.has_middle_name.has_last_name span {
-  display: block; }
-
-.profile .gform_wrapper .gform_footer input[type=submit] {
-  margin-top: 1.5em; }
-
-.profile .user-content-wrap {
+.page-template-page-promo article.hentry, .page-template-page-promo-demo article.hentry {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2043,21 +1951,202 @@ style a page via class
       -ms-flex-wrap: wrap;
           flex-wrap: wrap; }
 
-.profile .user-promos li {
-  width: 128px; }
-  .profile .user-promos li a {
+.page-template-page-promo .entry-content, .page-template-page-promo-demo .entry-content {
+  max-width: 68%; }
+
+.page-template-page-promo .promo-review, .page-template-page-promo-demo .promo-review {
+  margin-bottom: 1.5em; }
+
+.page-template-page-promo .promo-description p, .page-template-page-promo-demo .promo-description p {
+  font-size: 15px; }
+
+.page-template-page-promo .promo-form, .page-template-page-promo-demo .promo-form {
+  margin-top: 1em; }
+
+.promo-player {
+  width: 350px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 3px; }
+  .promo-player h4 {
+    margin: 0 0 0.5em;
+    color: #aaa;
+    font-family: "San Francisco Medium", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    .promo-player h4 .cat-number {
+      color: #555; }
+    .promo-player h4 .small-logo {
+      width: 32px;
+      position: relative;
+      top: 3px; }
+
+.promo-wrap .gform_fields {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+
+.promo-wrap .promo-form .form-left {
+  width: 290px;
+  clear: left;
+  float: left;
+  margin-right: 1em; }
+
+.promo-wrap .promo-form .promo-rating {
+  width: 100px; }
+
+.promo-wrap .promo-form .form-right {
+  float: right;
+  width: 350px; }
+
+.promo-wrap .promo-form .promo-drop-down {
+  margin-bottom: 0 !important; }
+  .promo-wrap .promo-form .promo-drop-down select {
+    position: relative;
+    top: 6px; }
+
+.promo-wrap .promo-review {
+  clear: left;
+  width: 54%;
+  margin-right: 1.5em; }
+
+.hentry .promo-header {
+  color: #555;
+  padding: 0; }
+
+.promo-image {
+  float: left;
+  margin-right: 1.2em; }
+  .promo-image img {
+    width: 150px;
+    height: 150px; }
+
+.promo-info {
+  line-height: normal;
+  margin-left: 170px; }
+  .promo-info h2, .promo-info h3, .promo-info h4 {
+    margin: 0 0 0.3em;
+    line-height: normal; }
+  .promo-info .cat-number {
     color: #0088cc; }
-    .profile .user-promos li a:hover, .profile .user-promos li a:focus {
+  .promo-info .promo-artist {
+    color: #004466; }
+  .promo-info .promo-title {
+    color: #777; }
+
+.promo-meta {
+  font-size: .77em;
+  color: #aaa; }
+
+.gform_confirmation_wrapper h2 {
+  margin: 0; }
+
+.list-square {
+  list-style-type: square;
+  list-style-position: inside; }
+
+.faq dt {
+  cursor: pointer;
+  margin-bottom: .5em; }
+
+.faq .question {
+  margin-bottom: 0; }
+
+.faq dd:not(.expanded) {
+  display: none; }
+
+.profile .top-avatar, .account .top-avatar, .author .top-avatar {
+  float: left; }
+  .profile .top-avatar img, .account .top-avatar img, .author .top-avatar img {
+    height: 32px;
+    width: 32px;
+    position: relative;
+    top: 10px;
+    margin-right: 6px; }
+
+.profile .user-avatar, .account .user-avatar, .author .user-avatar {
+  max-width: 400px;
+  border-top: 1px solid #eee;
+  padding: 1.5em 0 0; }
+  .profile .user-avatar h3, .account .user-avatar h3, .author .user-avatar h3 {
+    margin-top: 0; }
+  .profile .user-avatar .description, .account .user-avatar .description, .author .user-avatar .description {
+    font-size: 12px; }
+
+.profile .profile-form, .account .profile-form, .author .profile-form {
+  padding-top: 0; }
+
+.profile .gform_wrapper, .account .gform_wrapper, .author .gform_wrapper {
+  width: 400px; }
+
+.profile .gform_wrapper .top_label .gfield_description, .account .gform_wrapper .top_label .gfield_description, .author .gform_wrapper .top_label .gfield_description {
+  padding: 0; }
+
+.profile .gform_wrapper .ginput_complex.ginput_container.has_first_name.has_middle_name.no_last_name span, .profile .gform_wrapper .ginput_complex.ginput_container.has_first_name.no_middle_name.has_last_name span, .profile .gform_wrapper .ginput_complex.ginput_container.no_first_name.has_middle_name.has_last_name span, .account .gform_wrapper .ginput_complex.ginput_container.has_first_name.has_middle_name.no_last_name span, .account .gform_wrapper .ginput_complex.ginput_container.has_first_name.no_middle_name.has_last_name span, .account .gform_wrapper .ginput_complex.ginput_container.no_first_name.has_middle_name.has_last_name span, .author .gform_wrapper .ginput_complex.ginput_container.has_first_name.has_middle_name.no_last_name span, .author .gform_wrapper .ginput_complex.ginput_container.has_first_name.no_middle_name.has_last_name span, .author .gform_wrapper .ginput_complex.ginput_container.no_first_name.has_middle_name.has_last_name span {
+  display: block; }
+
+.profile input[type="text"], .profile input[type="password"], .profile input[type="datetime"], .profile input[type="datetime-local"], .profile input[type="date"], .profile input[type="month"], .profile input[type="time"], .profile input[type="week"], .profile input[type="number"], .profile input[type="email"], .profile input[type="url"], .profile input[type="search"], .profile input[type="tel"], .profile input[type="color"], .profile select, .profile textarea, .profile .field, .account input[type="text"], .account input[type="password"], .account input[type="datetime"], .account input[type="datetime-local"], .account input[type="date"], .account input[type="month"], .account input[type="time"], .account input[type="week"], .account input[type="number"], .account input[type="email"], .account input[type="url"], .account input[type="search"], .account input[type="tel"], .account input[type="color"], .account select, .account textarea, .account .field, .author input[type="text"], .author input[type="password"], .author input[type="datetime"], .author input[type="datetime-local"], .author input[type="date"], .author input[type="month"], .author input[type="time"], .author input[type="week"], .author input[type="number"], .author input[type="email"], .author input[type="url"], .author input[type="search"], .author input[type="tel"], .author input[type="color"], .author select, .author textarea, .author .field {
+  margin-bottom: 4px;
+  width: 98% !important;
+  color: #0088cc !important; }
+
+.profile .gform_wrapper .ginput_complex.ginput_container.has_first_name.no_middle_name.has_last_name span, .account .gform_wrapper .ginput_complex.ginput_container.has_first_name.no_middle_name.has_last_name span, .author .gform_wrapper .ginput_complex.ginput_container.has_first_name.no_middle_name.has_last_name span {
+  display: inline-block !important; }
+
+.profile .gform_wrapper .gform_footer input[type=submit], .account .gform_wrapper .gform_footer input[type=submit], .author .gform_wrapper .gform_footer input[type=submit] {
+  margin-top: 1.5em; }
+
+.profile .user-content-wrap, .account .user-content-wrap, .author .user-content-wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+
+.profile .user-promos li, .account .user-promos li, .author .user-promos li {
+  width: 128px; }
+  .profile .user-promos li a, .account .user-promos li a, .author .user-promos li a {
+    color: #0088cc; }
+    .profile .user-promos li a:hover, .profile .user-promos li a:focus, .account .user-promos li a:hover, .account .user-promos li a:focus, .author .user-promos li a:hover, .author .user-promos li a:focus {
       color: #005580; }
-  .profile .user-promos li h2, .profile .user-promos li h3, .profile .user-promos li h4 {
+  .profile .user-promos li h2, .profile .user-promos li h3, .profile .user-promos li h4, .account .user-promos li h2, .account .user-promos li h3, .account .user-promos li h4, .author .user-promos li h2, .author .user-promos li h3, .author .user-promos li h4 {
     margin: 0; }
-  .profile .user-promos li .promo-list-image img {
+  .profile .user-promos li .track-cat, .account .user-promos li .track-cat, .author .user-promos li .track-cat {
+    color: #004466; }
+  .profile .user-promos li .promo-list-image img, .account .user-promos li .promo-list-image img, .author .user-promos li .promo-list-image img {
     height: 128px;
     width: 128px; }
-  .profile .user-promos li .promo-viewed {
+  .profile .user-promos li .promo-viewed, .account .user-promos li .promo-viewed, .author .user-promos li .promo-viewed {
     opacity: .6; }
-    .profile .user-promos li .promo-viewed:hover, .profile .user-promos li .promo-viewed:focus {
+    .profile .user-promos li .promo-viewed:hover, .profile .user-promos li .promo-viewed:focus, .account .user-promos li .promo-viewed:hover, .account .user-promos li .promo-viewed:focus, .author .user-promos li .promo-viewed:hover, .author .user-promos li .promo-viewed:focus {
       opacity: .8; }
+
+.profile .user-promos p.small, .account .user-promos p.small, .author .user-promos p.small {
+  width: 69%; }
+
+.profile .profile-success, .account .profile-success, .author .profile-success {
+  display: none;
+  position: absolute;
+  width: 500px;
+  height: 100px;
+  background: #d5efd9;
+  color: #004466;
+  top: 50%;
+  left: 50%;
+  margin-left: -250px;
+  margin-top: 250px;
+  padding: 1.5em;
+  font-size: 1.334em;
+  border: 1px solid #999;
+  border-radius: 5px;
+  z-index: 99; }
+
+.register .clef-button-wrap .clef-button-wrapper:nth-child(2) {
+  display: none !important; }
 
 /*********************
 LAYOUT & GRID STYLES
@@ -2073,7 +2162,7 @@ a img {
   outline: none; }
 
 a, a:visited {
-  color: #F15A24;
+  color: #0088cc;
   outline: 0;
   outline: none;
   text-decoration: none;
@@ -2081,9 +2170,10 @@ a, a:visited {
   /* on click */
   /* mobile tap color */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #d9430e;
+    color: #00699e;
     outline: 0;
-    outline: none; }
+    outline: none;
+    text-decoration: underline; }
   a:active, a:visited:active {
     outline: 0;
     outline: none; }
@@ -2103,7 +2193,8 @@ H1, H2, H3, H4, H5 STYLES
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   text-rendering: optimizelegibility;
   font-weight: 500;
-  font-family: "san_francisco_textsemibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "San Francisco Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #03202F;
   /*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -2148,7 +2239,7 @@ HEADER STYLES
     width: 150px;
     height: auto;
     position: relative;
-    top: 4px; }
+    top: 7px; }
 
 /*********************
 NAVIGATION STYLES
@@ -2516,8 +2607,10 @@ FOOTER STYLES
 *********************/
 .footer {
   clear: both;
-  background-color: #323944;
-  color: #f8f9fa; }
+  background-color: #021621;
+  color: #eceee5;
+  padding: 1.5em;
+  min-height: 200px; }
 
 /*
 	if you checked out the link above:
@@ -2529,20 +2622,30 @@ FOOTER STYLES
 	view.
 	*/
 /* end .footer-links */
+.copyright {
+  font-size: 14px; }
+
 .gform_wrapper {
   margin-top: 0; }
   .gform_wrapper input[type="text"], .gform_wrapper input[type="password"], .gform_wrapper input[type="datetime"], .gform_wrapper input[type="datetime-local"], .gform_wrapper input[type="date"], .gform_wrapper input[type="month"], .gform_wrapper input[type="time"], .gform_wrapper input[type="week"], .gform_wrapper input[type="number"], .gform_wrapper input[type="email"], .gform_wrapper input[type="url"], .gform_wrapper input[type="search"], .gform_wrapper input[type="tel"], .gform_wrapper input[type="color"], .gform_wrapper select, .gform_wrapper textarea, .gform_wrapper .field {
-    color: #004466; }
+    color: #004466;
+    margin-bottom: 0 !important; }
   .gform_wrapper .gform_wrapper select, .gform_wrapper .gform_wrapper textarea {
-    font-family: "san_francisco_textmedium", "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+    font-family: "San Francisco Medium", "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+  .gform_wrapper .nocaptcha {
+    margin-bottom: 1.5em; }
 
 .gform_wrapper .top_label .gfield_label {
-  margin: 0;
-  font-family: "san_francisco_textsemibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0 !important;
+  font-family: "San Francisco Semibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500; }
 
+.ua-safari .gform_wrapper .top_label .gfield_label {
+  font-family: "san_francisco_textmedium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700; }
+
 .gform_wrapper textarea.medium {
-  text-indent: .45em; }
+  padding: .45em; }
 
 .gform_wrapper .top_label input.medium, .gform_wrapper .top_label select.medium, .gform_wrapper textarea.medium {
   width: 100%; }
@@ -2559,6 +2662,10 @@ FOOTER STYLES
 #field_2_10 {
   display: none; }
 
+#field_3_9 .gfield_description {
+  font-size: 75%;
+  margin-bottom: 1em; }
+
 .promo-drop-down {
   margin-bottom: 1.5em !important; }
 
@@ -2573,7 +2680,7 @@ body .gform_wrapper ul li.gfield.gfield_html img {
   width: 60% !important; }
   .gforms_confirmation_message td font {
     font-size: 1.1em !important;
-    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+    font-family: "San Francisco Medium", "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
 
 .gform_wrapper .gform_ajax_spinner {
   display: none !important; }
@@ -2590,8 +2697,28 @@ body .gform_wrapper ul li.gfield.gfield_html img {
   width: 60%;
   float: left; }
 
-.promo-download {
+input[name="manage_avatar_submit"] {
   display: none; }
+
+.promo-download {
+  display: none;
+  margin: 12px 0 0 !important; }
+  .promo-download h2 {
+    margin: 0;
+    font-size: 1.125em;
+    line-height: normal; }
+    .promo-download h2 .review-nickname {
+      color: #0088cc; }
+  .promo-download .small {
+    margin-bottom: 5px;
+    margin-top: 0; }
+  .promo-download p {
+    margin-top: 12px; }
+  .promo-download .icon-heart {
+    padding: 0 2px;
+    color: red; }
+  .promo-download .orange:hover, .promo-download .orange:focus {
+    text-decoration: none; }
 
 .controls {
   padding: 30px 0 15px;
@@ -2643,6 +2770,9 @@ body .gform_wrapper ul li.gfield.gfield_html img {
       top: 1px; }
     .player-controls button .icon-play3, .player-controls button .icon-pause2 {
       top: 0; }
+
+.list-group-item:hover, .list-group-item:focus {
+  text-decoration: none; }
 
 #wave {
   margin: 0 0 1.2em;
@@ -2856,7 +2986,7 @@ wave {
   height: 20px !important;
   width: 24px !important;
   text-align: center;
-  font-family: "san_francisco_textthin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "San Francisco Thin", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-left: -1em;
   top: -.35em;
   background: #ddd !important;
@@ -3010,7 +3140,10 @@ come into play. Have fun!
 GENERAL STYLES
 *********************/
   .page-template-page-promo .entry-content {
-    max-width: 100%; }
+    max-width: 100%;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
     .page-template-page-promo .entry-content .promo-wrap {
       margin-top: 1.5em; }
     .page-template-page-promo .entry-content .promo-player {
@@ -3149,9 +3282,12 @@ come into play. Have fun!
   /*********************
 GENERAL STYLES
 *********************/
-  .page-template-page-promo .entry-content {
-    max-width: 53%; }
-  .page-template-page-promo .right-section {
+  .page-template-page-promo .entry-content, .page-template-page-promo-demo .entry-content {
+    max-width: 53%;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap; }
+  .page-template-page-promo .right-section, .page-template-page-promo-demo .right-section {
     margin-top: 2.2em; }
   .profile .profile-form {
     min-width: 50%; }
@@ -3171,19 +3307,23 @@ NAVIGATION STYLES
 *********************/
   .header nav {
     display: inline-block;
-    left: 60px;
-    position: relative; }
+    position: relative;
+    float: right; }
+  .user-menu-item img {
+    position: relative;
+    top: 9px;
+    margin-right: 4px; }
   .nav {
     border: 0;
     /* end .menu ul li */
     /* highlight current page */
     /* end current highlighters */ }
     .nav ul {
-      background: #323944;
       margin-top: 0; }
     .nav li {
       float: left;
       position: relative;
+      line-height: 44px;
       /*
 		plan your menus and drop-downs wisely.
 		*/
@@ -3195,8 +3335,7 @@ NAVIGATION STYLES
 			has the possibility of being a mobile device.
 			*/ }
         .nav li a:hover, .nav li a:focus {
-          color: #fff;
-          text-decoration: underline; }
+          color: #0088cc; }
       .nav li ul.sub-menu,
       .nav li ul.children {
         margin-top: 0;
@@ -3259,6 +3398,12 @@ SIDEBARS & ASIDES
   /* recent-comments widget */
   /* search widget */
   /* text widget */
+  .textwidget .clef-button-wrapper {
+    float: left;
+    width: 200px !important; }
+  .textwidget .login-password {
+    clear: both;
+    display: block; }
   /*********************
 FOOTER STYLES
 *********************/
@@ -3286,14 +3431,12 @@ This is the desktop size. It's larger than an iPad so it will only
 be seen on the Desktop.
 
 ******************************************************************/
-  .page-template-page-promo .entry-content {
-    max-width: 53%; }
-    .page-template-page-promo .entry-content .promo-wrap {
-      margin-top: 1.5em; }
-      .page-template-page-promo .entry-content .promo-wrap .promo-review {
-        width: 100%; }
-    .page-template-page-promo .entry-content .promo-wrap .promo-rating {
-      margin-bottom: 2em; }
+  .page-template-page-promo .entry-content .promo-wrap {
+    margin-top: 1.5em; }
+    .page-template-page-promo .entry-content .promo-wrap .promo-review {
+      width: 100%; }
+  .page-template-page-promo .entry-content .promo-wrap .promo-rating {
+    margin-bottom: 2em; }
   .page-template-page-promo .right-section {
     margin-top: 2.2em; } }
 
@@ -3316,11 +3459,19 @@ be seen on the Desktop.
 ******************************************************************/
   .wrap {
     width: 1040px; }
-  .page-template-page-promo .entry-content {
+  .page-template-page-promo article.hentry, .page-template-page-promo-demo article.hentry {
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap; }
+  .page-template-page-promo .entry-content, .page-template-page-promo-demo .entry-content {
     max-width: 68%; }
-  .page-template-page-promo .right-section {
+  .page-template-page-promo .right-section, .page-template-page-promo-demo .right-section {
     max-width: 32%;
-    margin-top: 2.2em; } }
+    margin-top: 2.2em; }
+  .user-promos {
+    max-width: 680px; }
+  .profile-form {
+    max-width: 450px; } }
 
 /*********************
 LARGE VIEWING SIZE

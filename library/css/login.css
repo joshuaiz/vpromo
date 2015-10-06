@@ -12,7 +12,17 @@ For more info, check out the codex:
 http://codex.wordpress.org/Creating_Admin_Themes
 
 ******************************************************************/
+#login {
+  width: 100% !important;
+  max-width: 600px !important;
+  padding: 0 0 8% !important; }
+
 /* the form box */
+.clef-login-form:not(.login-action-register):not(.login-action-lostpassword).clef-login-form-embed:not(.clef-override-or-invite):not(.clef-auto-connect-account):not(.clef-show-username-password) #login {
+  width: 400px !important;
+  max-width: 100% !important;
+  margin: auto !important; }
+
 /*
 This is the Wordpress logo in the admin area.
 You'll have to load your own images and mess

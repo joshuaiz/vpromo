@@ -13,11 +13,11 @@ be seen on the Desktop.
   width: 1040px;
 }
 
-.page-template-page-promo {
-	// article.hentry {
-	// 	display: flex;
-	// 	// flex-wrap: wrap;
-	// }
+.page-template-page-promo, .page-template-page-promo-demo {
+	article.hentry {
+		// display: flex;
+		flex-wrap: nowrap;
+	}
 	.entry-content {
 		max-width: 68%;
 	}
@@ -25,4 +25,12 @@ be seen on the Desktop.
 		max-width: 32%;
 		margin-top: 2.2em;
 	}
+}
+
+.user-promos {
+	max-width: 680px;
+}
+
+.profile-form {
+	max-width: 450px;
 }

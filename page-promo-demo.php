@@ -1,6 +1,6 @@
 <?php
 /*
- Template Name: Promo Page
+ Template Name: Promo Demo Page
 */
 ?>
 
@@ -9,21 +9,7 @@
     <div id="content">
 
         <div id="inner-content" class="wrap cf">
-
-            <?php /* Logged-in check */ ?>
-
-            <?php if ( !is_user_logged_in() ) {
-
-                echo '<h2>Nope. You must be logged in to view this page.</h2>'; ?>
-
-                <div class="login-form">
-
-                    <?php echo do_shortcode('[clef_render_login_button]' ); ?>
-
-                </div>
-
-            <?php } else { ?>
-
+            
         <main id="main" class="m-all t-all d-all cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -145,9 +131,8 @@
                             <div class="promo-download">
 
                                 <?php $current_user = wp_get_current_user(); ?>
-                                <?php $slug = $current_user->user_login; ?>
 
-                                <h2><span class="review-nickname"><?php echo $current_user->nickname; ?></span>, <span class="review-thanks"></span></h2>
+                                <!-- <h2><span class="review-nickname"><?php echo $current_user->nickname; ?></span>, <span class="review-thanks"></span></h2> -->
 
                                 <p class="small">For individual track downloads, use the download buttons next to each track on the right →</p>
 
@@ -158,8 +143,6 @@
                                 <a href="<?php echo $project; ?>" class="dropbox-saver">Save to Dropbox</a>
 
                                 <p>Remember, if you <span class="icon-heart"></span> it, chart it!</p>
-
-                                <p><a href="/user/<?php echo $slug; ?>/">Go to your account</a></p>
 
                             </div><?php /* End .promo-download */ ?>
 
@@ -306,8 +289,6 @@
 
                 <?php endif; ?>
 
-                 <?php } ?>
-
             </main><?php /* End #main */ ?>
 
         </div><?php /* End #inner-content */ ?>
@@ -332,7 +313,7 @@ jQuery(document).ready(function($){
 
     $('.promo-drop-down').insertAfter('.promo-affiliations');
 
-    $('.gform_hidden').attr('value', '');
+    $('#input_2_9').attr('value', '');
 
     $('.promo-name .gfield_required').clone().insertAfter('.promo-drop-down > label, .promo-review > label, .promo-rating > label');
 
@@ -494,7 +475,7 @@ function checkAndSubmit() {
             $('.qtip').qtip('disable');
             $('.gform_button').hide();
             $('.download').fadeIn(200);
-            $('.review-thanks').html(quote);
+            // $('.review-thanks').html(quote);
             
             
             }

@@ -246,6 +246,14 @@ body#tinymce.wp-editor {
         font-style: normal;
     }
   */
+  /**
+   * http://applemusic.tumblr.com/
+   */
+  /** Ultra Light */
+  /** Thin */
+  /** Medium */
+  /** Semi Bold */
+  /** Bold */
   /*
   The following is based of Typebase:
   https://github.com/devinhunt/typebase.css
@@ -347,7 +355,7 @@ body#tinymce.wp-editor {
   /* NOTE: value of "padding-box" is only supported in Gecko. So
   probably best not to use it. I mean, were you going to anyway? */
   width: 731px;
-  font-family: "san_francisco_textmedium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "San Francisco Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 100%;
   line-height: 1.5;
   color: #5c6b80;
@@ -422,10 +430,10 @@ body#tinymce.wp-editor {
     box-sizing: content-box;
     height: 0; }
   body#tinymce.wp-editor p {
-    -webkit-hyphens: auto;
-    -epub-hyphens: auto;
-    -moz-hyphens: auto;
-    hyphens: auto; }
+    -webkit-hyphens: none;
+    -epub-hyphens: none;
+    -moz-hyphens: none;
+    hyphens: none; }
   body#tinymce.wp-editor pre {
     margin: 0; }
   body#tinymce.wp-editor code,
@@ -562,34 +570,6 @@ body#tinymce.wp-editor {
     font-style: italic; }
 @font-face {
   body#tinymce.wp-editor {
-    font-family: 'san_francisco_textbold';
-    src: url("fonts/sanfranciscotext-bold-webfont.eot");
-    src: url("fonts/sanfranciscotext-bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/sanfranciscotext-bold-webfont.woff2") format("woff2"), url("fonts/sanfranciscotext-bold-webfont.woff") format("woff"), url("fonts/sanfranciscotext-bold-webfont.ttf") format("truetype"), url("fonts/sanfranciscotext-bold-webfont.svg#san_francisco_textbold") format("svg");
-    font-weight: normal;
-    font-style: normal; } }
-@font-face {
-  body#tinymce.wp-editor {
-    font-family: 'san_francisco_textregular';
-    src: url("fonts/sanfranciscotext-regular-webfont.eot");
-    src: url("fonts/sanfranciscotext-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/sanfranciscotext-regular-webfont.woff2") format("woff2"), url("fonts/sanfranciscotext-regular-webfont.woff") format("woff"), url("fonts/sanfranciscotext-regular-webfont.ttf") format("truetype"), url("fonts/sanfranciscotext-regular-webfont.svg#san_francisco_textregular") format("svg");
-    font-weight: normal;
-    font-style: normal; } }
-@font-face {
-  body#tinymce.wp-editor {
-    font-family: 'san_francisco_textitalic';
-    src: url("fonts/sanfranciscotext-regularitalic-webfont.eot");
-    src: url("fonts/sanfranciscotext-regularitalic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/sanfranciscotext-regularitalic-webfont.woff2") format("woff2"), url("fonts/sanfranciscotext-regularitalic-webfont.woff") format("woff"), url("fonts/sanfranciscotext-regularitalic-webfont.ttf") format("truetype"), url("fonts/sanfranciscotext-regularitalic-webfont.svg#san_francisco_textitalic") format("svg");
-    font-weight: normal;
-    font-style: normal; } }
-@font-face {
-  body#tinymce.wp-editor {
-    font-family: 'san_francisco_textthin';
-    src: url("fonts/sanfranciscotext-thin-webfont.eot");
-    src: url("fonts/sanfranciscotext-thin-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/sanfranciscotext-thin-webfont.woff2") format("woff2"), url("fonts/sanfranciscotext-thin-webfont.woff") format("woff"), url("fonts/sanfranciscotext-thin-webfont.ttf") format("truetype"), url("fonts/sanfranciscotext-thin-webfont.svg#san_francisco_textthin") format("svg");
-    font-weight: normal;
-    font-style: normal; } }
-@font-face {
-  body#tinymce.wp-editor {
     font-family: 'san_francisco_displaybold';
     src: url("fonts/sanfranciscodisplay-bold-webfont.eot");
     src: url("fonts/sanfranciscodisplay-bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/sanfranciscodisplay-bold-webfont.woff2") format("woff2"), url("fonts/sanfranciscodisplay-bold-webfont.woff") format("woff"), url("fonts/sanfranciscodisplay-bold-webfont.ttf") format("truetype"), url("fonts/sanfranciscodisplay-bold-webfont.svg#san_francisco_displaybold") format("svg");
@@ -604,18 +584,29 @@ body#tinymce.wp-editor {
     font-style: normal; } }
 @font-face {
   body#tinymce.wp-editor {
-    font-family: 'san_francisco_textMdIt';
-    src: url("fonts/sanfranciscotext-mediumitalic-webfont.eot");
-    src: url("fonts/sanfranciscotext-mediumitalic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/sanfranciscotext-mediumitalic-webfont.woff2") format("woff2"), url("fonts/sanfranciscotext-mediumitalic-webfont.woff") format("woff"), url("fonts/sanfranciscotext-mediumitalic-webfont.ttf") format("truetype"), url("fonts/sanfranciscotext-mediumitalic-webfont.svg#san_francisco_textMdIt") format("svg");
-    font-weight: normal;
-    font-style: normal; } }
+    font-family: "San Francisco Ultra Light";
+    font-weight: 100;
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-ultralight-webfont.woff2"); } }
 @font-face {
   body#tinymce.wp-editor {
-    font-family: 'san_francisco_textsemibold';
-    src: url("fonts/sanfranciscotext-semibold-webfont.eot");
-    src: url("fonts/sanfranciscotext-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/sanfranciscotext-semibold-webfont.woff2") format("woff2"), url("fonts/sanfranciscotext-semibold-webfont.woff") format("woff"), url("fonts/sanfranciscotext-semibold-webfont.ttf") format("truetype"), url("fonts/sanfranciscotext-semibold-webfont.svg#san_francisco_textsemibold") format("svg");
+    font-family: "San Francisco Thin";
+    font-weight: 200;
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-thin-webfont.woff2"); } }
+@font-face {
+  body#tinymce.wp-editor {
+    font-family: "San Francisco Medium";
     font-weight: normal;
-    font-style: normal; } }
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.woff2"); } }
+@font-face {
+  body#tinymce.wp-editor {
+    font-family: "San Francisco Semibold";
+    font-weight: 500;
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-semibold-webfont.woff2"); } }
+@font-face {
+  body#tinymce.wp-editor {
+    font-family: "San Francisco Bold";
+    font-weight: bold;
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff2"); } }
   body#tinymce.wp-editor p {
     -ms-word-wrap: break-word;
     word-break: break-word;
@@ -632,11 +623,11 @@ body#tinymce.wp-editor {
     -o-font-feature-settings: "liga", "dlig";
     font-feature-settings: "liga", "dlig"; }
   body#tinymce.wp-editor a, body#tinymce.wp-editor a:visited {
-    color: #F15A24;
+    color: #0088cc;
     /* on hover */
     /* on click */ }
     body#tinymce.wp-editor a:hover, body#tinymce.wp-editor a:focus, body#tinymce.wp-editor a:visited:hover, body#tinymce.wp-editor a:visited:focus {
-      color: #d9430e; }
+      color: #00699e; }
     body#tinymce.wp-editor a:link, body#tinymce.wp-editor a:visited:link {
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
   body#tinymce.wp-editor h1, body#tinymce.wp-editor .h1, body#tinymce.wp-editor h2, body#tinymce.wp-editor .h2, body#tinymce.wp-editor h3, body#tinymce.wp-editor .h3, body#tinymce.wp-editor h4, body#tinymce.wp-editor .h4, body#tinymce.wp-editor h5, body#tinymce.wp-editor .h5 {

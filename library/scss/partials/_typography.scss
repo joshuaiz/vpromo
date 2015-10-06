@@ -40,66 +40,66 @@ FONT FACE (IN YOUR FACE)
   }
 */
 
-@font-face {
-    font-family: 'san_francisco_textbold';
-    src: url('fonts/sanfranciscotext-bold-webfont.eot');
-    src: url('fonts/sanfranciscotext-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/sanfranciscotext-bold-webfont.woff2') format('woff2'),
-         url('fonts/sanfranciscotext-bold-webfont.woff') format('woff'),
-         url('fonts/sanfranciscotext-bold-webfont.ttf') format('truetype'),
-         url('fonts/sanfranciscotext-bold-webfont.svg#san_francisco_textbold') format('svg');
-    font-weight: normal;
-    font-style: normal;
+// @font-face {
+//     font-family: 'san_francisco_textbold';
+//     src: url('fonts/sanfranciscotext-bold-webfont.eot');
+//     src: url('fonts/sanfranciscotext-bold-webfont.eot?#iefix') format('embedded-opentype'),
+//          url('fonts/sanfranciscotext-bold-webfont.woff2') format('woff2'),
+//          url('fonts/sanfranciscotext-bold-webfont.woff') format('woff'),
+//          url('fonts/sanfranciscotext-bold-webfont.ttf') format('truetype'),
+//          url('fonts/sanfranciscotext-bold-webfont.svg#san_francisco_textbold') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
 
-}
-
-
-
-
-@font-face {
-    font-family: 'san_francisco_textregular';
-    src: url('fonts/sanfranciscotext-regular-webfont.eot');
-    src: url('fonts/sanfranciscotext-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/sanfranciscotext-regular-webfont.woff2') format('woff2'),
-         url('fonts/sanfranciscotext-regular-webfont.woff') format('woff'),
-         url('fonts/sanfranciscotext-regular-webfont.ttf') format('truetype'),
-         url('fonts/sanfranciscotext-regular-webfont.svg#san_francisco_textregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
+// }
 
 
 
 
-@font-face {
-    font-family: 'san_francisco_textitalic';
-    src: url('fonts/sanfranciscotext-regularitalic-webfont.eot');
-    src: url('fonts/sanfranciscotext-regularitalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/sanfranciscotext-regularitalic-webfont.woff2') format('woff2'),
-         url('fonts/sanfranciscotext-regularitalic-webfont.woff') format('woff'),
-         url('fonts/sanfranciscotext-regularitalic-webfont.ttf') format('truetype'),
-         url('fonts/sanfranciscotext-regularitalic-webfont.svg#san_francisco_textitalic') format('svg');
-    font-weight: normal;
-    font-style: normal;
+// @font-face {
+//     font-family: 'san_francisco_textregular';
+//     src: url('fonts/sanfranciscotext-regular-webfont.eot');
+//     src: url('fonts/sanfranciscotext-regular-webfont.eot?#iefix') format('embedded-opentype'),
+//          url('fonts/sanfranciscotext-regular-webfont.woff2') format('woff2'),
+//          url('fonts/sanfranciscotext-regular-webfont.woff') format('woff'),
+//          url('fonts/sanfranciscotext-regular-webfont.ttf') format('truetype'),
+//          url('fonts/sanfranciscotext-regular-webfont.svg#san_francisco_textregular') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
 
-}
-
-
+// }
 
 
-@font-face {
-    font-family: 'san_francisco_textthin';
-    src: url('fonts/sanfranciscotext-thin-webfont.eot');
-    src: url('fonts/sanfranciscotext-thin-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/sanfranciscotext-thin-webfont.woff2') format('woff2'),
-         url('fonts/sanfranciscotext-thin-webfont.woff') format('woff'),
-         url('fonts/sanfranciscotext-thin-webfont.ttf') format('truetype'),
-         url('fonts/sanfranciscotext-thin-webfont.svg#san_francisco_textthin') format('svg');
-    font-weight: normal;
-    font-style: normal;
 
-}
+
+// @font-face {
+//     font-family: 'san_francisco_textitalic';
+//     src: url('fonts/sanfranciscotext-regularitalic-webfont.eot');
+//     src: url('fonts/sanfranciscotext-regularitalic-webfont.eot?#iefix') format('embedded-opentype'),
+//          url('fonts/sanfranciscotext-regularitalic-webfont.woff2') format('woff2'),
+//          url('fonts/sanfranciscotext-regularitalic-webfont.woff') format('woff'),
+//          url('fonts/sanfranciscotext-regularitalic-webfont.ttf') format('truetype'),
+//          url('fonts/sanfranciscotext-regularitalic-webfont.svg#san_francisco_textitalic') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+
+// }
+
+
+
+
+// @font-face {
+//     font-family: 'san_francisco_textthin';
+//     src: url('fonts/sanfranciscotext-thin-webfont.eot');
+//     src: url('fonts/sanfranciscotext-thin-webfont.eot?#iefix') format('embedded-opentype'),
+//          url('fonts/sanfranciscotext-thin-webfont.woff2') format('woff2'),
+//          url('fonts/sanfranciscotext-thin-webfont.woff') format('woff'),
+//          url('fonts/sanfranciscotext-thin-webfont.ttf') format('truetype'),
+//          url('fonts/sanfranciscotext-thin-webfont.svg#san_francisco_textthin') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+
+// }
 
 @font-face {
     font-family: 'san_francisco_displaybold';
@@ -133,33 +133,72 @@ FONT FACE (IN YOUR FACE)
 
 
 
-@font-face {
-    font-family: 'san_francisco_textMdIt';
-    src: url('fonts/sanfranciscotext-mediumitalic-webfont.eot');
-    src: url('fonts/sanfranciscotext-mediumitalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/sanfranciscotext-mediumitalic-webfont.woff2') format('woff2'),
-         url('fonts/sanfranciscotext-mediumitalic-webfont.woff') format('woff'),
-         url('fonts/sanfranciscotext-mediumitalic-webfont.ttf') format('truetype'),
-         url('fonts/sanfranciscotext-mediumitalic-webfont.svg#san_francisco_textMdIt') format('svg');
-    font-weight: normal;
-    font-style: normal;
+// @font-face {
+//     font-family: 'san_francisco_textMdIt';
+//     src: url('fonts/sanfranciscotext-mediumitalic-webfont.eot');
+//     src: url('fonts/sanfranciscotext-mediumitalic-webfont.eot?#iefix') format('embedded-opentype'),
+//          url('fonts/sanfranciscotext-mediumitalic-webfont.woff2') format('woff2'),
+//          url('fonts/sanfranciscotext-mediumitalic-webfont.woff') format('woff'),
+//          url('fonts/sanfranciscotext-mediumitalic-webfont.ttf') format('truetype'),
+//          url('fonts/sanfranciscotext-mediumitalic-webfont.svg#san_francisco_textMdIt') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
 
+// }
+
+
+
+
+// @font-face {
+//     font-family: 'san_francisco_textsemibold';
+//     src: url('fonts/sanfranciscotext-semibold-webfont.eot');
+//     src: url('fonts/sanfranciscotext-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+//          url('fonts/sanfranciscotext-semibold-webfont.woff2') format('woff2'),
+//          url('fonts/sanfranciscotext-semibold-webfont.woff') format('woff'),
+//          url('fonts/sanfranciscotext-semibold-webfont.ttf') format('truetype'),
+//          url('fonts/sanfranciscotext-semibold-webfont.svg#san_francisco_textsemibold') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+
+// }
+
+/**
+ * http://applemusic.tumblr.com/
+ */
+
+/** Ultra Light */
+@font-face {
+  font-family: "San Francisco Ultra Light";
+  font-weight: 100;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-ultralight-webfont.woff2");
 }
 
-
-
-
+/** Thin */
 @font-face {
-    font-family: 'san_francisco_textsemibold';
-    src: url('fonts/sanfranciscotext-semibold-webfont.eot');
-    src: url('fonts/sanfranciscotext-semibold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/sanfranciscotext-semibold-webfont.woff2') format('woff2'),
-         url('fonts/sanfranciscotext-semibold-webfont.woff') format('woff'),
-         url('fonts/sanfranciscotext-semibold-webfont.ttf') format('truetype'),
-         url('fonts/sanfranciscotext-semibold-webfont.svg#san_francisco_textsemibold') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "San Francisco Thin";
+  font-weight: 200;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-thin-webfont.woff2");
+}
 
+/** Medium */
+@font-face {
+  font-family: "San Francisco Medium";
+  font-weight: normal;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.woff2");
+}
+
+/** Semi Bold */
+@font-face {
+  font-family: "San Francisco Semibold";
+  font-weight: 500;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-semibold-webfont.woff2");
+}
+
+/** Bold */ 
+@font-face {
+  font-family: "San Francisco Bold";
+  font-weight: bold;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff2");
 }
 
 
@@ -180,15 +219,20 @@ $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
 */
 // $lato:              'Lato', $sans-serif;
 $roboto:              'Roboto', $sans-serif;
-$sf:                  'san_francisco_textmedium', $sans-serif;
-
-$sf-bold:             'san_francisco_displaybold', $sans-serif;
-
-$sf-semibold:             'san_francisco_textsemibold', $sans-serif;
 
 $sf-medium:             'san_francisco_textmedium', $sans-serif;
 
-$sf-thin:                 'san_francisco_textthin', $sans-serif;
+$sf:                  'San Francisco Medium', $sans-serif;
+
+$sf-bold:             'San Francisco Bold', $sans-serif;
+
+$sf-semibold:             'San Francisco Semibold', $sans-serif;
+
+
+
+$sf-thin:                 'San Francisco Thin', $sans-serif;
+
+$sf-heading:            'san_francisco_displaybold', $sans-serif;
 
 /*
 some nice typographical defaults

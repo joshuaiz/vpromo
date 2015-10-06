@@ -13,17 +13,35 @@ and will be used across all viewports.
 
 /*********************
 GENERAL STYLES
-*********************/
+// *********************/
+// * {
+// 	-webkit-transition: all 0.2s ease;                  
+//     -moz-transition: all 0.2s ease;                 
+//     -o-transition: all 0.2s ease;   
+//     -ms-transition: all 0.2s ease;          
+//     transition: all 0.2s ease;
+// }
 
 body {
 	font-family: $sf;
-	font-size: 100%;
+	font-size: 105%;
 	line-height: 1.5;
 	letter-spacing: -0.23px;
-	color: #444;
-	// background-color: $gray;
+	color: $vpblue;
+	// background-color: #f5f5f5;
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
+}
+
+.ua-safari {
+	body {
+		font-family:$sf-medium;
+		
+	}
+	h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+		font-family: $sf-heading;
+		// letter-spacing: -0.23em;
+	}
 }
 
 #main2 {
@@ -37,11 +55,86 @@ p {
 	margin: 0 0 1em;
 }
 
+.intro {
+	font-size: 21px;
+	color: lighten($vpblue, 15%);
+}
+
+ul li {
+	color: lighten($vpblue, 11%);
+}
+
 .entry-content img {
 	margin-bottom: 0;
 }
 
-.page-template-page-promo {
+.login-form {
+	margin: 2.2em 0;
+}
+
+.expanded {
+	display: block;
+}
+
+/********************
+WORDPRESS BODY CLASSES
+style a page via class
+********************/
+
+
+.rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
+.home {
+	.cta-buttons {
+		padding: 1em 0;
+		.button {
+			display: inline-block;
+			padding: .5em 1em;
+		}
+		.button:nth-of-type(1) {
+			margin-right: 1em;
+		}
+	}
+}                          /* home page */
+.blog {}                          /* blog template page */
+.archive {}                       /* archive page */
+.date {}                          /* date archive page */
+	.date-paged-1 {}                /* replace the number to the corresponding page number */
+.search {}                        /* search page */
+	.search-results {}              /* search result page */
+	.search-no-results {}           /* no results search page */
+	.search-paged-1 {}              /* individual paged search (i.e. body.search-paged-3) */
+.error404 {
+	h2 {
+		color: $apple-blue;
+	}
+}                      /* 404 page */
+.single {}                        /* single post page */
+	.postid-1 {}                    /* individual post page by id (i.e. body.postid-73) */
+	.single-paged-1 {}              /* individual paged single (i.e. body.single-paged-3) */
+.attachment {}                    /* attatchment page */
+	.attachmentid-1 {}              /* individual attatchment page (i.e. body.attachmentid-763) */
+	.attachment-mime-type {}        /* style mime type pages */
+.author {}                        /* author page */
+	.author-nicename {}             /* user nicename (i.e. body.author-samueladams) */
+	.author-paged-1 {}              /* paged author archives (i.e. body.author-paged-4) for page 4 */
+.category {}                      /* category page */
+	.category-1 {}                  /* individual category page (i.e. body.category-6) */
+	.category-paged-1 {}            /* replace the number to the corresponding page number */
+.tag {}                           /* tag page */
+	.tag-slug {}                    /* individual tag page (i.e. body.tag-news) */
+	.tag-paged-1 {}                 /* replace the number to the corresponding page number */
+.page-template {}                 /* custom page template page */
+	.page-template-page-php {}      /* individual page template (i.e. body.page-template-contact-php */
+	.page-paged-1 {}                /* replace the number to the corresponding page number */
+	.page-parent {}                 /* parent page template */
+	.page-child {}                  /* child page template */
+	.parent-pageid-1 {}             /* replace the number to the corresponding page number */
+.logged-in {}                     /* if user is logged in */
+.paged {}                         /* paged items like search results or archives */
+	.paged-1 {}                     /* individual paged (i.e. body.paged-3) */
+	
+
+.page-template-page-promo, .page-template-page-promo-demo {
 	article.hentry {
 		display: flex;
 		flex-wrap: wrap;
@@ -52,6 +145,18 @@ p {
 	.right-section {
 		// max-width: 32%;
 		// margin-top: 2.2em;
+	}
+	.promo-review {
+		margin-bottom: 1.5em;
+	}
+	.promo-description p {
+		font-size: 15px;
+	}
+	#main {
+		// margin-bottom: 2em;
+	}
+	.promo-form {
+		margin-top: 1em;
 	}
 }
 
@@ -65,8 +170,10 @@ p {
 		h4 {
 			margin: 0 0 .5em;
     		color: #aaa;
+    		font-family: $sf;
     		.cat-number {
     			color: #555;
+    			
     		}
     		.small-logo {
     			width: 32px;
@@ -97,7 +204,7 @@ p {
 		}
 		.promo-rating {
 			width: 100px;
-			height: 50px;
+			// height: 50px;
 		}
 		.form-right {
 			float: right;
@@ -105,6 +212,10 @@ p {
 		}
 		.promo-drop-down {
 			margin-bottom: 0 !important;
+			select {
+				    position: relative;
+    				top: 6px;
+			}
 		}
 	}
 	.promo-review {
@@ -133,6 +244,7 @@ p {
 
 .promo-info {
 	line-height: normal;
+	margin-left: 170px;
 	h2, h3, h4 {
 		margin: 0 0 .3em;
 		line-height: normal;
@@ -159,51 +271,30 @@ p {
 	}
 }
 
+.list-square {
+	list-style-type: square;
+	list-style-position: inside;
+	
+}
 
-
-/********************
-WORDPRESS BODY CLASSES
-style a page via class
-********************/
-
-.rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
-.home {}                          /* home page */
-.blog {}                          /* blog template page */
-.archive {}                       /* archive page */
-.date {}                          /* date archive page */
-	.date-paged-1 {}                /* replace the number to the corresponding page number */
-.search {}                        /* search page */
-	.search-results {}              /* search result page */
-	.search-no-results {}           /* no results search page */
-	.search-paged-1 {}              /* individual paged search (i.e. body.search-paged-3) */
-.error404 {}                      /* 404 page */
-.single {}                        /* single post page */
-	.postid-1 {}                    /* individual post page by id (i.e. body.postid-73) */
-	.single-paged-1 {}              /* individual paged single (i.e. body.single-paged-3) */
-.attachment {}                    /* attatchment page */
-	.attachmentid-1 {}              /* individual attatchment page (i.e. body.attachmentid-763) */
-	.attachment-mime-type {}        /* style mime type pages */
-.author {}                        /* author page */
-	.author-nicename {}             /* user nicename (i.e. body.author-samueladams) */
-	.author-paged-1 {}              /* paged author archives (i.e. body.author-paged-4) for page 4 */
-.category {}                      /* category page */
-	.category-1 {}                  /* individual category page (i.e. body.category-6) */
-	.category-paged-1 {}            /* replace the number to the corresponding page number */
-.tag {}                           /* tag page */
-	.tag-slug {}                    /* individual tag page (i.e. body.tag-news) */
-	.tag-paged-1 {}                 /* replace the number to the corresponding page number */
-.page-template {}                 /* custom page template page */
-	.page-template-page-php {}      /* individual page template (i.e. body.page-template-contact-php */
-	.page-paged-1 {}                /* replace the number to the corresponding page number */
-	.page-parent {}                 /* parent page template */
-	.page-child {}                  /* child page template */
-	.parent-pageid-1 {}             /* replace the number to the corresponding page number */
-.logged-in {}                     /* if user is logged in */
-.paged {}                         /* paged items like search results or archives */
-	.paged-1 {}                     /* individual paged (i.e. body.paged-3) */
 	
 
-.profile {
+.faq {
+	dt { 
+		cursor: pointer; 
+		margin-bottom: .5em;
+	}
+	.question {
+		margin-bottom: 0;
+	}
+	dd:not(.expanded) {
+		display: none;
+	}
+}
+
+	
+
+.profile, .account, .author {
 	.top-avatar {
 		float: left;
 		img {
@@ -215,26 +306,43 @@ style a page via class
 		}
 	}
 	.user-avatar {
+		max-width: 400px;
 		border-top: 1px solid #eee;
 		h3 {
 			margin-top: 0;
 		}
-		padding: 1.5em;
-		p.description {
+		padding: 1.5em 0 0;
+		.description {
 			font-size: 12px;
-			width: 50%;
+			// width: 50%;
 		}
 
+
+	}
+	.profile-form {
+		padding-top: 0;
+	}
+	.gform_wrapper {
+		width: 400px;
 	}
 	.gform_wrapper .top_label .gfield_description {
 		padding: 0;
 	}
 	.gform_wrapper form li, .gform_wrapper li {
-		margin-bottom: 1.2em;
+		// margin-bottom: 1.2em;
 	}
 
 	.gform_wrapper .ginput_complex.ginput_container.has_first_name.has_middle_name.no_last_name span, .gform_wrapper .ginput_complex.ginput_container.has_first_name.no_middle_name.has_last_name span, .gform_wrapper .ginput_complex.ginput_container.no_first_name.has_middle_name.has_last_name span {
 		display: block;
+	}
+	input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], select, textarea, .field {
+		margin-bottom: 4px;
+		width: 98% !important;
+		color: #0088cc !important;
+	}
+
+	.gform_wrapper .ginput_complex.ginput_container.has_first_name.no_middle_name.has_last_name span, {
+		display: inline-block !important;
 	}
 	.gform_wrapper .gform_footer input[type=submit] {
 		margin-top: 1.5em;
@@ -258,6 +366,9 @@ style a page via class
 		 h2, h3, h4 {
 		 	margin: 0;
 		 }
+		 .track-cat {
+		 	color: #004466;
+		 }
 		.promo-list-image {
 			// float: left;
 			img {
@@ -271,8 +382,34 @@ style a page via class
 				opacity: .8;
 			}
 		}
-
+		
+		}
+		p.small {
+			width: 69%;
+		}
 	}
+	.profile-success {
+		display: none;
+		position: absolute;
+		width: 500px;
+		height: 100px;
+		background: lighten(#b0e1b7, 10%);
+		color: #004466;
+		top: 50%;
+		left: 50%;
+		margin-left: -250px;
+		margin-top: 250px;
+		padding: 1.5em;
+		font-size: 1.334em;
+		border: 1px solid #999;
+		border-radius: 5px;
+		z-index: 99;
+	}
+}
+
+.register {
+	 .clef-button-wrap .clef-button-wrapper:nth-child(2) {
+		display: none !important;
 	}
 }
 
@@ -300,6 +437,7 @@ a, a:visited {
 		color: $link-hover;
 		outline: 0;
 	outline: none;
+	text-decoration: underline;
 	}
 
 	/* on click */
@@ -328,7 +466,8 @@ H1, H2, H3, H4, H5 STYLES
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	text-rendering: optimizelegibility;
 	font-weight: 500;
-	font-family: $sf-semibold;
+	font-family: $sf-bold;
+	color: $vpblue;
 	/*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -385,7 +524,7 @@ HEADER STYLES
 			width: 150px;
     		height: auto;
     		position: relative;
-    		top: 4px;
+    		top: 7px;
 		}
 	}
 
@@ -1087,8 +1226,10 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
-	background-color: $black;
-	color: $light-gray;
+	background-color: darken($vpblue, 3%);
+	color: $tan;
+	padding: 1.5em;
+	min-height: 200px;
 }
 
 	/*
@@ -1111,28 +1252,40 @@ FOOTER STYLES
 	} /* end .footer-links */
 
 
-	.copyright {}
+	.copyright {
+		font-size: 14px;
+	}
 
 .gform_wrapper {
 	margin-top: 0;
 	input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], select, textarea, .field {
 		// color: #555;
 		color: #004466;
+		margin-bottom:0 !important;
 
 	}
 	.gform_wrapper select, .gform_wrapper textarea {
 		font-family: $sf !important;
 	}
+	.nocaptcha {
+		margin-bottom: 1.5em;
+	}
 }
 
 .gform_wrapper .top_label .gfield_label {
-	margin: 0;
+	margin: 0 !important;
 	font-family: $sf-semibold;
 	font-weight: 500;
 }
 
+.ua-safari .gform_wrapper .top_label .gfield_label {
+	font-family: $sf-medium;
+	font-weight: 700;
+}
+
 .gform_wrapper textarea.medium {
-	text-indent: .45em;
+	// text-indent: .45em;
+	padding: .45em;
 }
 
 .gform_wrapper .top_label input.medium, .gform_wrapper .top_label select.medium, .gform_wrapper textarea.medium {
@@ -1155,6 +1308,13 @@ FOOTER STYLES
 	display: none;
 }
 
+#field_3_9 {
+	.gfield_description {
+		font-size: 75%;
+		margin-bottom: 1em;
+	}
+}
+
 .promo-drop-down {
 	margin-bottom: 1.5em !important;
 }
@@ -1172,7 +1332,7 @@ body .gform_wrapper ul li.gfield.gfield_html img {
 	width: 60% !important;
 	td font {
 		font-size: 1.1em !important;
-		font-family: $roboto !important;
+		font-family: $sf !important;
 	}
 }
 
@@ -1193,6 +1353,10 @@ body .gform_wrapper ul li.gfield.gfield_html img {
     float: left;
 }
 
+input[name="manage_avatar_submit"] {
+	display: none;
+}
+
 .dloadmp3-MI {
 	// display: none !important;
 }
@@ -1200,6 +1364,31 @@ body .gform_wrapper ul li.gfield.gfield_html img {
 
 .promo-download {
 	display: none;
+	margin: 12px 0 0 !important;
+	h2 {
+		margin: 0;
+		font-size: 1.125em;
+		line-height: normal;
+		.review-nickname {
+			color: #0088cc;
+		}
+	}
+	.small {
+		margin-bottom: 5px;
+		margin-top: 0;
+	}
+	p {
+		margin-top: 12px;
+	}
+	.icon-heart {
+		padding: 0 2px;
+    	color: red;
+	}
+	.orange {
+		&:hover, &:focus {
+			text-decoration: none;
+		}
+	}
 }
 
 .controls {
@@ -1270,6 +1459,12 @@ body .gform_wrapper ul li.gfield.gfield_html img {
 		.icon-play3, .icon-pause2 {
 			top: 0;
 		}
+	}
+}
+
+.list-group-item {
+	&:hover, &:focus {
+		text-decoration: none;
 	}
 }
 

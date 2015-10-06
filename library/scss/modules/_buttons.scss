@@ -100,6 +100,7 @@ and it will create a button dependant on those variables.
 
 .blue:hover {
   background-color: #6FC6FF;
+  text-decoration: none;
 }
 
 .green {
@@ -210,6 +211,8 @@ button:focus {outline:0;}
   background: -moz-linear-gradient(top, #205489, #036);  
   background: -ms-linear-gradient(top, #205489, #036);  
   background: -o-linear-gradient(top, #205489, #036);
+  text-decoration: none;
+  color: #ffffff !important;
 }
 .button:hover ~ img
 {
@@ -224,7 +227,7 @@ button:focus {outline:0;}
 -moz-transform: rotate(-35deg);
 -ms-transform: rotate(-35deg);
 -o-transform: rotate(-35deg);
-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=35);
+// filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=35);
 }
 .button:active
 {
@@ -240,6 +243,10 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=35);
 
 .button:focus {
   outline: 0 !important;
+}
+
+.button:visited {
+  color: #fff;
 }
 
 .button-orange {

@@ -14,6 +14,20 @@
 
 						<main id="main" class="m-all t-all d-all cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
+						<?php
+if ( !is_user_logged_in() ) {
+    echo '<h2>Nope. You must be logged in to view this page.</h2>'; ?>
+
+    <div class="login-form">
+
+    <?php echo do_shortcode('[clef_render_login_button]' ); ?>
+
+    </div>
+
+
+<?php } else { ?>
+
+
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
@@ -68,6 +82,9 @@
 										the_content();
 
 									?>
+
+									<div class="profile-success">Your profile has been updated.</div>
+
 								</section>
 
 								<section class="user-promos">
@@ -111,9 +128,9 @@
 									<?php // [submit_data_VIZ025] => Array ( [0] => VIZ025 )
   								$user_id = get_current_user_id();
   								$key = 'submit_data_' . $cat;
-  								// $single = true;
+  								$single = true;
   								$viewed = get_user_meta( $user_id, $key, $single ); 
-  								$viewed = maybe_unserialize($viewed );
+  								$viewed = maybe_unserialize($viewed);
   								// print_r($viewed);
   								?>
 
@@ -122,6 +139,8 @@
 										<?php if(!$viewed == '') {
 
 											$class = 'promo-viewed';
+
+
 										} else {
 											$class = 'not-viewed';
 										} ?>
@@ -132,17 +151,37 @@
 
                                         		<div class="promo-list-image cf">
 
-                                            		<a href="/promo/<?php echo $catl; ?>/"/><img class="<?php echo $class; ?>" src="<?php echo $image['url']; ?>"  /></a>
+                                        		<?php if($viewed['catalog_number'] == $cat) { ?>
+	
+                                            		<img class="<?php echo $class; ?>" src="<?php echo $image['url']; ?>"  />
+
+                                            	<?php } else { ?>
+
+                                            	<a href="/promo/<?php echo $catl; ?>/"/><img class="<?php echo $class; ?>" src="<?php echo $image['url']; ?>"  /></a>
+
+                                            		
+                                            	<?php } ?>
                                     
                                         		</div>
 
-                                        		<h2><a href="/promo/<?php echo $catl; ?>/"/><?php echo $cat; ?></a></h2>
+                                        	<?php if($viewed['catalog_number'] == $cat) { ?>
+
+                                        		<h2 class="track-cat"><?php echo $cat; ?></h2>
+
+                                        <?php } else { ?>
+                                        		<h2 class="track-cat"><a href="/promo/<?php echo $catl; ?>/"/><?php echo $cat; ?></a></h2>
+                                        	<?php } ?>
+
                                         		<h3><?php echo $artist; ?></h3>
                                         		<h4><?php echo $title; ?></h4>
 											
-										<?php if($viewed[cat] == $cat) { ?>
+										<?php if($viewed['catalog_number'] == $cat) { ?>
 
-											<p class="small viewed">You submitted this promo on <?php echo $viewed[sub_date]; ?> GMT.</p>
+											<p class="small viewed">You responded to this promo on <?php echo $viewed['sub_date']; ?> GMT.</p>
+
+											 <?php $project = get_field('project_download'); ?>
+
+                                    <a class="" href="<?php echo $project; ?>">Download Zip</a>
 
 										<?php } ?>
                                         	
@@ -199,6 +238,8 @@
 
 							<?php endif; ?>
 
+							<?php } ?>
+
 						</main>
 
 
@@ -208,3 +249,54 @@
 
 
 <?php get_footer(); ?>
+
+<script>
+
+jQuery(document).ready(function($){
+ 
+    var $formID = $('.gform_wrapper > form').attr('id');
+    $('.gform_button').click(function (e) {
+    e.preventDefault();
+
+    //start your AJAX validation
+    checkAndSubmit();
+});
+    
+function checkAndSubmit() {
+
+    var $formID = $('.gform_wrapper > form').attr('id');
+    // console.log($formID);
+    // var review = $('.promo-review').find( 'textarea').first().val();
+    // var rating = $('input[name="score"]').val();
+    // var favorite = $('.promo-drop-down').find('select').first().val();
+
+        var submit = $.ajax({
+    
+            url: $($formID).attr('action'),
+            type: 'post',
+            dataType: 'json',
+            data: $('#' + $formID).serialize(),
+             success: function(data) {
+                   console.log(data);
+                 }
+        });
+    
+        submit.always(function() {
+    
+
+            $(".profile-success").fadeIn(200).delay(2000).fadeOut(200);
+        
+            
+            })
+
+        // }
+
+    }
+
+});
+
+jQuery(document).ready(function($){
+	$('.user-avatar').insertAfter('.user-affiliations');
+});
+
+</script>

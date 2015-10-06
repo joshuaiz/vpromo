@@ -14,6 +14,17 @@ require_once( 'library/bones.php' );
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
 require_once( 'library/admin.php' );
 
+add_filter( 'wp_default_scripts', 'remove_jquery_migrate' );
+
+function remove_jquery_migrate( &$scripts)
+{
+    if(!is_admin())
+    {
+        $scripts->remove( 'jquery');
+        $scripts->add( 'jquery', false, array( 'jquery-core' ), '1.10.2' );
+    }
+}
+
 /*********************
 LAUNCH BONES
 Let's get everything up and running.
@@ -239,7 +250,7 @@ can replace these fonts, change it in your scss files
 and be up and running in seconds.
 */
 function bones_fonts() {
-  wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic');
+  // wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic');
 }
 
 add_action('wp_enqueue_scripts', 'bones_fonts');
@@ -358,24 +369,27 @@ remove_filter ('acf_the_content', 'wpautop');
 /**
  * Save the confirmation number of the wire transfer to the user's meta
  */
-add_action( 'gform_after_submission_2', 'input_fields', 10, 2 );
+add_action( 'gform_after_submission_2', 'promo_input_fields', 10, 2 );
 
-function input_fields( $entry, $form ) {
+function promo_input_fields( $entry, $form ) {
+
+  $user_id = get_current_user_id();
 
     $affiliation = $entry[8];
 
-    update_user_meta( get_current_user_id(), 'user_affiliation', $affiliation );
+    update_user_meta( $user_id, 'user_affiliation', $affiliation );
+
 
       $formID = rgar( $entry, 'form_id' );
       $cat = rgar( $entry, '10' );
       $date = rgar($entry, 'date_created');
-      $user_id = get_current_user_id();
+      
       // $submit_data = $cat;
 
       $submit_data = array(
-    "cat" => $cat,
-    "sub_date" => $date,
-);
+        "catalog_number" => $cat,
+        "sub_date" => $date,
+      );
       
 
       // add_user_meta( $user_id, 'submit_data', $submit_data);
@@ -384,6 +398,134 @@ function input_fields( $entry, $form ) {
 
 }
 
-// End Custom Avatar via Gravity forms pload field
+add_action( 'gform_after_submission_3', 'profile_input_fields', 10, 2 );
+
+function profile_input_fields( $entry, $form ) {
+
+  $user_id = get_current_user_id();
+
+    $affiliation = $entry[5];
+
+    update_user_meta( $user_id, 'user_affiliation', $affiliation );
+
+    $email = $entry[7];
+
+    update_user_meta( $user_id, 'email_schedule', $email );
+
+    $location = $entry[8];
+
+    update_user_meta( $user_id, 'user_location', $location );
+
+    $password = $entry[9];
+
+    update_user_meta( $user_id, 'user_pass', $password );
+
+}
+
+
+// // Redirect users who arent logged in...
+// function login_redirect() {
+
+//     // Current Page
+//     global $pagenow;
+
+//     // Check to see if user in not logged in and not on the login page
+//     if(!is_user_logged_in() && $pagenow != 'wp-login.php')
+//           // If user is, Redirect to Login form.
+//           auth_redirect();
+// }
+// // add the block of code above to the WordPress template
+// add_action( 'wp', 'login_redirect' );
+
+function change_author_permalinks() {
+    global $wp_rewrite;
+    $wp_rewrite->author_base = 'user';
+    $wp_rewrite->author_structure = '/' . $wp_rewrite->author_base. '/%author%';
+}
+add_action('init','change_author_permalinks');
+
+add_filter('wp_nav_menu_items','add_custom_in_menu', 10, 2);
+function add_custom_in_menu( $items, $args ) {
+  if ( is_user_logged_in() ) {
+  $current_user = wp_get_current_user();
+  $slug = $current_user->user_login;
+
+  $avatar = get_avatar( $current_user->user_email, 24 );
+  $logout = wp_logout_url( home_url() );
+                    
+                    
+    if( $args->theme_location == 'main-nav')  {
+         
+        $items .=  '<li class="user-menu-item menu-item"><a href="/user/' . $slug . '/' . '">' . $avatar . 'My Account' . '</a></li><li class="logout-menu-item menu-item sub-menu-item"><a href="' . $logout . '">Log Out</a></li>';
+  
+    }
+    return $items;
+  }
+}
+
+add_action('wp_ajax_myprefix_delete_user','myprefix_delete_user_cb');
+function myprefix_delete_user_cb(){
+    //You should check nonces and user permissions at this point.
+    $user_id = int_val($_REQUEST['user_id']);
+    wp_delete_user($user_id);
+    exit();
+}
+
+// Enable shortcodes in widgets
+add_filter('widget_text', 'do_shortcode');
+
+function random_sentence() {
+$quotes = array(
+"Oooooooops...",
+"Awwwww Hell...",
+"The internets are hard.",
+"Say what? Say huh?",
+"We speak English 'round these parts...",
+"Give me something I can use...",
+"Oh hell naw! You are not trying to make me go find that again...",
+"Say '?' again, I dare you, I double dare you...",
+"I love you, but I've chosen 404...",
+"You're looking for stuffs that's not here...",
+"Bloop, bleep, blop, bloop...",
+"Uh, hello?!? That's, like, totally not here...",
+"Sort it out, mate...try again.",
+"That's 'Vizual', with a 'z'.",
+"Either our servers crapped out or you made a boo-boo.",
+"Oh dear, you've done it again.",
+"Type it with the thing on the other thing at the end there.",
+"Bless your poor typing little heart.",
+"Well hai, welcomes to mi sitez. I helps you find stuffz.",
+"Ain't no party like a 404 party.",
+"In Epic404, no one can hear you scream.",
+"The who with the what now? Let's try this again.",
+"You've done ended up here. Again."
+);
+
+echo $quotes[rand(0, count($quotes) - 1)];
+}
+
+function disable_wp_emojicons() {
+
+  // all actions related to emojis
+  remove_action( 'admin_print_styles', 'print_emoji_styles' );
+  remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+  remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+  remove_action( 'wp_print_styles', 'print_emoji_styles' );
+  remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+  remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+  remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+
+  // filter to remove TinyMCE emojis
+  add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
+}
+add_action( 'init', 'disable_wp_emojicons' );
+
+function disable_emojicons_tinymce( $plugins ) {
+  if ( is_array( $plugins ) ) {
+    return array_diff( $plugins, array( 'wpemoji' ) );
+  } else {
+    return array();
+  }
+}
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
