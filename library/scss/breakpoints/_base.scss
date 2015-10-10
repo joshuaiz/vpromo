@@ -9,6 +9,8 @@ loaded by mobile devices. You want to keep it as minimal as
 possible. This is called at the top of the main stylsheet
 and will be used across all viewports.
 
+codekittest
+
 ******************************************************************/
 
 /*********************
@@ -76,6 +78,43 @@ ul li {
 	display: block;
 }
 
+.indicator {
+	font-size: 11px;
+	content: "\25bc";
+}
+
+.recent-posts {
+	padding-top: 1.5em;
+	border-top: 1px solid #eee;
+}
+
+.recent-promos {
+	li {
+		width: 96px;
+		margin-right: 1em;
+	}
+}
+
+.term-headings {
+	font-family: $sf-bold;
+}
+
+::-webkit-input-placeholder {
+   font-size: 12px;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   font-size: 12px;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   font-size: 12px; 
+}
+
+:-ms-input-placeholder {  
+   font-size: 12px;
+}
+
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
@@ -132,9 +171,18 @@ style a page via class
 .logged-in {}                     /* if user is logged in */
 .paged {}                         /* paged items like search results or archives */
 	.paged-1 {}                     /* individual paged (i.e. body.paged-3) */
-	
 
-.page-template-page-promo, .page-template-page-promo-demo {
+
+
+.page-template-page-promo.logged-out {
+
+	.entry-content {
+		width: 100%;
+	}
+}
+
+
+.page-template-page-promo, .page-template-page-promo-demo, .page-template-page-promo-demo-new {
 	article.hentry {
 		display: flex;
 		flex-wrap: wrap;
@@ -413,11 +461,89 @@ style a page via class
 	}
 }
 
+.dropbox-saver {
+	margin-top: 14px;
+}
+
+.clef {
+	.hentry {
+		h1, h2, h3 {
+			margin-top: 0;
+		}
+	}
+	#connect-clef-account {
+		// max-width: 600px;
+		p {
+			line-height: normal;
+		}
+		p:last-of-type {
+			padding-bottom: 1.5em;
+		}
+	}
+	#clef-tutorial .intro .quotes blockquote {
+    	color: #333;
+    	text-align: left;
+    	font-weight: 700;
+    	font-size: 17px;
+    	line-height: 1.2em;
+    	margin-bottom: 70px;
+	}
+	.button-hero {
+		max-width: 400px !important;
+		text-align: center !important;
+	}
+	.login-outer {
+		margin-bottom: 2.2em;
+	}
+	.login-password {
+		margin-top: 0;
+		text-align: center;
+	}
+}
+
+
+
+.about {
+	.entry-content {
+		h2 {
+			margin-top: 0 !important;
+		}
+		.cta-buttons {
+			a {
+				display: inline-block;
+				margin-bottom: 1.5em;
+			}
+		}
+	}
+}
+
+.privacy {
+	h3 {
+		margin-bottom: .2em;
+	}
+}
+
+.vps {
+	h4 {
+		margin-top: 0;
+		color: lighten($vpblue, 15%);
+		a {
+			text-decoration: none;
+		}
+	}
+}
+
+.contact {
+	#field_4_4, #field_4_3 {
+		margin-top: 1.5em;
+	}
+}
+
 /*********************
 LAYOUT & GRID STYLES
 *********************/
 
-.wrap {
+.wrap, .wrap-clef {
 	width: 96%;
 	margin: 0 auto;
 }
@@ -527,6 +653,51 @@ HEADER STYLES
     		top: 7px;
 		}
 	}
+
+.user-meta {
+	display:none;
+	width: 300px;
+	position: absolute;
+	margin-top: 0;
+	right: 0;
+	background: #9aa6ac;
+	padding: 0px 20px 10px;
+	z-index: 101;
+	border-radius: 0 0 4px 4px;
+	// box-shadow: 0px 0px 2px #777;
+	li {
+		line-height: 1.2;
+		padding: 3px 0;
+	}
+	.profile-link {
+		padding-top: 0;
+	}
+	.arrow-up {
+		width: 0; 
+		height: 0; 
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 10px solid #9aa6ac;
+		position: relative;
+		top: -15px;
+		left: 205px;
+		line-height: 0;
+	}
+	#clef-tutorial {
+		// display: none !important;
+	}
+	#connect-clef-account {
+		position:absolute !important;
+		left: 0 !important;
+		z-index: 99 !important;
+		background: #efefef !important;
+		// margin-top: -8px;
+	}
+	#clef-settings-container .settings-section, #connect-clef-account .settings-section {
+		background: #efefef !important;
+		margin: 0 !important;
+	}
+}
 
 /*********************
 NAVIGATION STYLES
@@ -745,11 +916,11 @@ POSTS & CONTENT STYLES
 			}
 
 			blockquote {
-				margin: 0 0 1.5em 0.75em;
-				padding: 0 0 0 0.75em;
-				border-left: 3px solid $blue;
-				font-style: italic;
-				color: $meta-gray;
+				// margin: 0 0 1.5em 0.75em;
+				// padding: 0 0 0 0.75em;
+				// border-left: 3px solid $blue;
+				// font-style: italic;
+				// color: $meta-gray;
 
 				&:before {}
 

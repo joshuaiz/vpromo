@@ -11,7 +11,7 @@
 		<?php // force Internet Explorer to use the latest rendering engine available ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<title><?php wp_title(''); ?></title>
+		<title><?php if (is_home() || is_front_page()) { echo 'Home | Vizual Promo'; } else { wp_title( '|', true, 'right' ); } ?></title>
 
 		<?php // mobile meta (hooray!) ?>
 		<meta name="HandheldFriendly" content="True">
@@ -31,9 +31,6 @@
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-		<!-- <link type="text/css" rel="stylesheet" href="/js/jquery.qtip.css" /> -->
-
-		<!-- <link rel="stylesheet" href="https://i.icomoon.io/public/55c1c2376d/Promo/style.css"> -->
 
 		<?php // wordpress head functions ?>
 		<?php wp_head(); ?>
@@ -55,11 +52,13 @@
 				<div id="inner-header" class="wrap cf">
 
 					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-					<div id="logo" class="h1" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/library/images/vizual_promo_logo_sf_w.png"></a></div>
+					<div id="logo" class="h1" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><img src="https://s3.amazonaws.com/vizual/images/vizual_promo_logo_sf.png"></a></div>
 
 					<?php // if you'd like to use the site description you can un-comment it below ?>
 					<?php // bloginfo('description'); ?>
 
+					
+					<div class="header-wrap">
 
 					<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 						<?php wp_nav_menu(array(
@@ -77,6 +76,34 @@
 						)); ?>
 
 					</nav>
+
+					<div class="account-outer">
+
+						<?php if ( is_user_logged_in() ) {
+  						$current_user = wp_get_current_user();
+  						$slug = $current_user->user_login;
+						
+  						$avatar = get_avatar( $current_user->user_email, 24 );
+  						$logout = wp_logout_url( home_url() ); ?>
+                   
+         
+        				<div class="user-menu-item"><a class="user-trigger" href="/user/<?php echo $slug; ?>/"><?php echo $avatar; ?> My Account&nbsp; <span class="indicator">&#9662;</span></a>
+
+        					<ul class="user-meta">
+        						<li class="arrow-up"></li>
+        						<li class="profile-link"><a href="/user/<?php echo $slug; ?>/">My Profile/View Promos</a>
+								<li class="clef-settings"><?php // <li><?php echo do_shortcode('[clef_user_settings]'); ?><a href="/clef/">Clef Settings</a></li> 
+								<li class="user-logout"><a href="<?php echo $logout; ?>">Log Out</a></li>
+							</ul>
+
+        				</div>
+        				<div class="logout-menu-item"></div>
+						
+						<?php } ?>
+
+					</div>
+
+					</div>
 
 				</div>
 

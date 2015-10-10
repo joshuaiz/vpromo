@@ -72,18 +72,18 @@ FONT FACE (IN YOUR FACE)
 
 
 
-// @font-face {
-//     font-family: 'san_francisco_textitalic';
-//     src: url('fonts/sanfranciscotext-regularitalic-webfont.eot');
-//     src: url('fonts/sanfranciscotext-regularitalic-webfont.eot?#iefix') format('embedded-opentype'),
-//          url('fonts/sanfranciscotext-regularitalic-webfont.woff2') format('woff2'),
-//          url('fonts/sanfranciscotext-regularitalic-webfont.woff') format('woff'),
-//          url('fonts/sanfranciscotext-regularitalic-webfont.ttf') format('truetype'),
-//          url('fonts/sanfranciscotext-regularitalic-webfont.svg#san_francisco_textitalic') format('svg');
-//     font-weight: normal;
-//     font-style: normal;
+@font-face {
+    font-family: 'san_francisco_textitalic';
+    src: url('fonts/sanfranciscotext-regularitalic-webfont.eot');
+    src: url('fonts/sanfranciscotext-regularitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/sanfranciscotext-regularitalic-webfont.woff2') format('woff2'),
+         url('fonts/sanfranciscotext-regularitalic-webfont.woff') format('woff'),
+         url('fonts/sanfranciscotext-regularitalic-webfont.ttf') format('truetype'),
+         url('fonts/sanfranciscotext-regularitalic-webfont.svg#san_francisco_textitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
-// }
+}
 
 
 
@@ -228,11 +228,19 @@ $sf-bold:             'San Francisco Bold', $sans-serif;
 
 $sf-semibold:             'San Francisco Semibold', $sans-serif;
 
-
-
 $sf-thin:                 'San Francisco Thin', $sans-serif;
 
 $sf-heading:            'san_francisco_displaybold', $sans-serif;
+
+$sf-italic:             'san_francisco_textitalic', 'San Francisco Medium', $sans-serif;
+
+em, i {
+  font-family: $sf-italic;
+}
+
+bold, strong {
+  font-family: $sf-bold;
+}
 
 /*
 some nice typographical defaults
@@ -243,9 +251,9 @@ p {
   word-break: break-word; //non-standart css for webkit
   word-wrap: break-word;
   // cleaning up the ragged lines and breaks
-  -webkit-hyphens: auto;
-     -moz-hyphens: auto;
-          hyphens: auto;
+  -webkit-hyphens: none;
+     -moz-hyphens: none;
+          hyphens: none;
   // sets a minimum number of characters before and after the break
   -webkit-hyphenate-before: 2;
    -webkit-hyphenate-after: 3;

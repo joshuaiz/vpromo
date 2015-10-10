@@ -492,6 +492,13 @@ FONT FACE (IN YOUR FACE)
   }
 */
 @font-face {
+  font-family: 'san_francisco_textitalic';
+  src: url("fonts/sanfranciscotext-regularitalic-webfont.eot");
+  src: url("fonts/sanfranciscotext-regularitalic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/sanfranciscotext-regularitalic-webfont.woff2") format("woff2"), url("fonts/sanfranciscotext-regularitalic-webfont.woff") format("woff"), url("fonts/sanfranciscotext-regularitalic-webfont.ttf") format("truetype"), url("fonts/sanfranciscotext-regularitalic-webfont.svg#san_francisco_textitalic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
   font-family: 'san_francisco_displaybold';
   src: url("fonts/sanfranciscodisplay-bold-webfont.eot");
   src: url("fonts/sanfranciscodisplay-bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/sanfranciscodisplay-bold-webfont.woff2") format("woff2"), url("fonts/sanfranciscodisplay-bold-webfont.woff") format("woff"), url("fonts/sanfranciscodisplay-bold-webfont.ttf") format("truetype"), url("fonts/sanfranciscodisplay-bold-webfont.svg#san_francisco_displaybold") format("svg");
@@ -547,6 +554,12 @@ I've edited it a bit, but it's a nice starting point.
  i imported this one in the functions file so bones would look sweet.
  don't forget to remove it for your site.
 */
+em, i {
+  font-family: "san_francisco_textitalic", "San Francisco Medium", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+bold, strong {
+  font-family: "San Francisco Bold", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
 /*
 some nice typographical defaults
 more here: http://www.newnet-soft.com/blog/csstypography
@@ -555,10 +568,10 @@ p {
   -ms-word-wrap: break-word;
   word-break: break-word;
   word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-      hyphens: auto;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+      hyphens: none;
   -webkit-hyphenate-before: 2;
   -webkit-hyphenate-after: 3;
   hyphenate-lines: 3;
@@ -1848,6 +1861,8 @@ loaded by mobile devices. You want to keep it as minimal as
 possible. This is called at the top of the main stylsheet
 and will be used across all viewports.
 
+codekittest
+
 ******************************************************************/
 /*********************
 GENERAL STYLES
@@ -1891,6 +1906,35 @@ ul li {
 
 .expanded {
   display: block; }
+
+.indicator {
+  font-size: 11px;
+  content: "\25bc"; }
+
+.recent-posts {
+  padding-top: 1.5em;
+  border-top: 1px solid #eee; }
+
+.recent-promos li {
+  width: 96px;
+  margin-right: 1em; }
+
+.term-headings {
+  font-family: "San Francisco Bold", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+::-webkit-input-placeholder {
+  font-size: 12px; }
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  font-size: 12px; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 12px; }
+
+:-ms-input-placeholder {
+  font-size: 12px; }
 
 /********************
 WORDPRESS BODY CLASSES
@@ -1942,7 +1986,10 @@ style a page via class
 /* if user is logged in */
 /* paged items like search results or archives */
 /* individual paged (i.e. body.paged-3) */
-.page-template-page-promo article.hentry, .page-template-page-promo-demo article.hentry {
+.page-template-page-promo.logged-out .entry-content {
+  width: 100%; }
+
+.page-template-page-promo article.hentry, .page-template-page-promo-demo article.hentry, .page-template-page-promo-demo-new article.hentry {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1951,16 +1998,16 @@ style a page via class
       -ms-flex-wrap: wrap;
           flex-wrap: wrap; }
 
-.page-template-page-promo .entry-content, .page-template-page-promo-demo .entry-content {
+.page-template-page-promo .entry-content, .page-template-page-promo-demo .entry-content, .page-template-page-promo-demo-new .entry-content {
   max-width: 68%; }
 
-.page-template-page-promo .promo-review, .page-template-page-promo-demo .promo-review {
+.page-template-page-promo .promo-review, .page-template-page-promo-demo .promo-review, .page-template-page-promo-demo-new .promo-review {
   margin-bottom: 1.5em; }
 
-.page-template-page-promo .promo-description p, .page-template-page-promo-demo .promo-description p {
+.page-template-page-promo .promo-description p, .page-template-page-promo-demo .promo-description p, .page-template-page-promo-demo-new .promo-description p {
   font-size: 15px; }
 
-.page-template-page-promo .promo-form, .page-template-page-promo-demo .promo-form {
+.page-template-page-promo .promo-form, .page-template-page-promo-demo .promo-form, .page-template-page-promo-demo-new .promo-form {
   margin-top: 1em; }
 
 .promo-player {
@@ -2148,10 +2195,60 @@ style a page via class
 .register .clef-button-wrap .clef-button-wrapper:nth-child(2) {
   display: none !important; }
 
+.dropbox-saver {
+  margin-top: 14px; }
+
+.clef .hentry h1, .clef .hentry h2, .clef .hentry h3 {
+  margin-top: 0; }
+
+.clef #connect-clef-account p {
+  line-height: normal; }
+
+.clef #connect-clef-account p:last-of-type {
+  padding-bottom: 1.5em; }
+
+.clef #clef-tutorial .intro .quotes blockquote {
+  color: #333;
+  text-align: left;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.2em;
+  margin-bottom: 70px; }
+
+.clef .button-hero {
+  max-width: 400px !important;
+  text-align: center !important; }
+
+.clef .login-outer {
+  margin-bottom: 2.2em; }
+
+.clef .login-password {
+  margin-top: 0;
+  text-align: center; }
+
+.about .entry-content h2 {
+  margin-top: 0 !important; }
+
+.about .entry-content .cta-buttons a {
+  display: inline-block;
+  margin-bottom: 1.5em; }
+
+.privacy h3 {
+  margin-bottom: .2em; }
+
+.vps h4 {
+  margin-top: 0;
+  color: #085177; }
+  .vps h4 a {
+    text-decoration: none; }
+
+.contact #field_4_4, .contact #field_4_3 {
+  margin-top: 1.5em; }
+
 /*********************
 LAYOUT & GRID STYLES
 *********************/
-.wrap {
+.wrap, .wrap-clef {
   width: 96%;
   margin: 0 auto; }
 
@@ -2240,6 +2337,40 @@ HEADER STYLES
     height: auto;
     position: relative;
     top: 7px; }
+
+.user-meta {
+  display: none;
+  width: 300px;
+  position: absolute;
+  margin-top: 0;
+  right: 0;
+  background: #9aa6ac;
+  padding: 0px 20px 10px;
+  z-index: 101;
+  border-radius: 0 0 4px 4px; }
+  .user-meta li {
+    line-height: 1.2;
+    padding: 3px 0; }
+  .user-meta .profile-link {
+    padding-top: 0; }
+  .user-meta .arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #9aa6ac;
+    position: relative;
+    top: -15px;
+    left: 205px;
+    line-height: 0; }
+  .user-meta #connect-clef-account {
+    position: absolute !important;
+    left: 0 !important;
+    z-index: 99 !important;
+    background: #efefef !important; }
+  .user-meta #clef-settings-container .settings-section, .user-meta #connect-clef-account .settings-section {
+    background: #efefef !important;
+    margin: 0 !important; }
 
 /*********************
 NAVIGATION STYLES
@@ -2354,12 +2485,6 @@ POSTS & CONTENT STYLES
     border-right: 1px solid #eaedf2; }
     .entry-content th:last-child {
       border-right: 0; }
-  .entry-content blockquote {
-    margin: 0 0 1.5em 0.75em;
-    padding: 0 0 0 0.75em;
-    border-left: 3px solid #2980b9;
-    font-style: italic;
-    color: #9fa6b4; }
   .entry-content dd {
     margin-left: 0;
     font-size: 0.9em;
@@ -3299,9 +3424,22 @@ LAYOUT & GRID STYLES
   /*********************
 HEADER STYLES
 *********************/
+  .header .header-wrap .account-outer {
+    float: right;
+    position: relative; }
+  .header .header-wrap .user-menu-item, .header .header-wrap .logout-menu-item {
+    display: inline-block; }
+    .header .header-wrap .user-menu-item a, .header .header-wrap .logout-menu-item a {
+      color: #fff; }
+      .header .header-wrap .user-menu-item a:hover, .header .header-wrap .user-menu-item a:focus, .header .header-wrap .logout-menu-item a:hover, .header .header-wrap .logout-menu-item a:focus {
+        color: #0088cc;
+        text-decoration: none; }
+  .header .header-wrap .user-menu-item {
+    line-height: 74px; }
   #logo {
     width: 150px;
-    display: inline-block; }
+    display: inline-block;
+    float: left; }
   /*********************
 NAVIGATION STYLES
 *********************/
@@ -3457,15 +3595,15 @@ This is the desktop size. It's larger than an iPad so it will only
 be seen on the Desktop.
 
 ******************************************************************/
-  .wrap {
+  .wrap, .wrap-clef {
     width: 1040px; }
-  .page-template-page-promo article.hentry, .page-template-page-promo-demo article.hentry {
+  .page-template-page-promo article.hentry, .page-template-page-promo-demo article.hentry, .page-template-page-promo-demo-new article.hentry {
     -webkit-flex-wrap: nowrap;
         -ms-flex-wrap: nowrap;
             flex-wrap: nowrap; }
-  .page-template-page-promo .entry-content, .page-template-page-promo-demo .entry-content {
+  .page-template-page-promo .entry-content, .page-template-page-promo-demo .entry-content, .page-template-page-promo-demo-new .entry-content {
     max-width: 68%; }
-  .page-template-page-promo .right-section, .page-template-page-promo-demo .right-section {
+  .page-template-page-promo .right-section, .page-template-page-promo-demo .right-section, .page-template-page-promo-demo-new .right-section {
     max-width: 32%;
     margin-top: 2.2em; }
   .user-promos {
@@ -3488,7 +3626,7 @@ You can add some advanced styles here if you like. This kicks in
 on larger screens.
 
 ******************************************************************/
-  .wrap {
+  .wrap, .wrap-clef {
     width: 1140px; } }
 
 /*********************

@@ -9,11 +9,11 @@ be seen on the Desktop.
 
 ******************************************************************/
 
-.wrap {
+.wrap, .wrap-clef {
   width: 1040px;
 }
 
-.page-template-page-promo, .page-template-page-promo-demo {
+.page-template-page-promo, .page-template-page-promo-demo, .page-template-page-promo-demo-new {
 	article.hentry {
 		// display: flex;
 		flex-wrap: nowrap;

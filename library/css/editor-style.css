@@ -570,6 +570,13 @@ body#tinymce.wp-editor {
     font-style: italic; }
 @font-face {
   body#tinymce.wp-editor {
+    font-family: 'san_francisco_textitalic';
+    src: url("fonts/sanfranciscotext-regularitalic-webfont.eot");
+    src: url("fonts/sanfranciscotext-regularitalic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/sanfranciscotext-regularitalic-webfont.woff2") format("woff2"), url("fonts/sanfranciscotext-regularitalic-webfont.woff") format("woff"), url("fonts/sanfranciscotext-regularitalic-webfont.ttf") format("truetype"), url("fonts/sanfranciscotext-regularitalic-webfont.svg#san_francisco_textitalic") format("svg");
+    font-weight: normal;
+    font-style: normal; } }
+@font-face {
+  body#tinymce.wp-editor {
     font-family: 'san_francisco_displaybold';
     src: url("fonts/sanfranciscodisplay-bold-webfont.eot");
     src: url("fonts/sanfranciscodisplay-bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/sanfranciscodisplay-bold-webfont.woff2") format("woff2"), url("fonts/sanfranciscodisplay-bold-webfont.woff") format("woff"), url("fonts/sanfranciscodisplay-bold-webfont.ttf") format("truetype"), url("fonts/sanfranciscodisplay-bold-webfont.svg#san_francisco_displaybold") format("svg");
@@ -607,13 +614,17 @@ body#tinymce.wp-editor {
     font-family: "San Francisco Bold";
     font-weight: bold;
     src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff2"); } }
+  body#tinymce.wp-editor em, body#tinymce.wp-editor i {
+    font-family: "san_francisco_textitalic", "San Francisco Medium", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  body#tinymce.wp-editor bold, body#tinymce.wp-editor strong {
+    font-family: "San Francisco Bold", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   body#tinymce.wp-editor p {
     -ms-word-wrap: break-word;
     word-break: break-word;
     word-wrap: break-word;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    hyphens: auto;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    hyphens: none;
     -webkit-hyphenate-before: 2;
     -webkit-hyphenate-after: 3;
     hyphenate-lines: 3;

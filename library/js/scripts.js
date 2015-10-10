@@ -135,6 +135,43 @@ jQuery(document).ready(function($) {
   */
   loadGravatars();
 
+  // $('.user-trigger, .user-menu-item, .user-meta').hover(function(){
+  //   $('.user-meta').show();
+  // }, function() {
+  //   $('.user-meta').delay(1000).fadeOut(200);
+  // });
+
+  $(".user-menu-item").mouseenter(function () {
+    $('.user-meta').show();
+});
+
+$(".user-menu-item").mouseleave(function () {
+    $('.user-meta').delay(1000).hide();
+});
+
+$('#logo > a > img').on({
+    "mouseover" : function() {
+          this.src = 'https://s3.amazonaws.com/vizual/images/vizual_promo_logo_sf_hover@2x.png';
+        },
+        "mouseout" : function() {
+          this.src='https://s3.amazonaws.com/vizual/images/vizual_promo_logo_sf@2x.png';
+     }
+    
+  });
+
+//   $('#cat').hover(function()
+// {
+//      if($('#dog').is(':visible'))
+//         $('#dog').fadeOut(750 /* Animation Time */, function()
+//      {
+//         // animation complete callback
+//          $('#cat').fadeIn(750);
+//      });
+// }, function()
+// { 
+//      // Mouse Leave callback
+// });
+
 
 }); /* end of as page load scripts */
 

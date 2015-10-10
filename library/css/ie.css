@@ -77,6 +77,12 @@ FONT FACE (IN YOUR FACE)
   }
 */
 @font-face {
+  font-family: 'san_francisco_textitalic';
+  src: url("fonts/sanfranciscotext-regularitalic-webfont.eot");
+  src: url("fonts/sanfranciscotext-regularitalic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/sanfranciscotext-regularitalic-webfont.woff2") format("woff2"), url("fonts/sanfranciscotext-regularitalic-webfont.woff") format("woff"), url("fonts/sanfranciscotext-regularitalic-webfont.ttf") format("truetype"), url("fonts/sanfranciscotext-regularitalic-webfont.svg#san_francisco_textitalic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
   font-family: 'san_francisco_displaybold';
   src: url("fonts/sanfranciscodisplay-bold-webfont.eot");
   src: url("fonts/sanfranciscodisplay-bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/sanfranciscodisplay-bold-webfont.woff2") format("woff2"), url("fonts/sanfranciscodisplay-bold-webfont.woff") format("woff"), url("fonts/sanfranciscodisplay-bold-webfont.ttf") format("truetype"), url("fonts/sanfranciscodisplay-bold-webfont.svg#san_francisco_displaybold") format("svg");
@@ -125,6 +131,12 @@ I've edited it a bit, but it's a nice starting point.
  i imported this one in the functions file so bones would look sweet.
  don't forget to remove it for your site.
 */
+em, i {
+  font-family: "san_francisco_textitalic", "San Francisco Medium", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+bold, strong {
+  font-family: "San Francisco Bold", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
 /*
 some nice typographical defaults
 more here: http://www.newnet-soft.com/blog/csstypography
@@ -133,9 +145,9 @@ p {
   -ms-word-wrap: break-word;
   word-break: break-word;
   word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
   -webkit-hyphenate-before: 2;
   -webkit-hyphenate-after: 3;
   hyphenate-lines: 3;
@@ -307,9 +319,23 @@ LAYOUT & GRID STYLES
 /*********************
 HEADER STYLES
 *********************/
+.header .header-wrap .account-outer {
+  float: right;
+  position: relative; }
+.header .header-wrap .user-menu-item, .header .header-wrap .logout-menu-item {
+  display: inline-block; }
+  .header .header-wrap .user-menu-item a, .header .header-wrap .logout-menu-item a {
+    color: #fff; }
+    .header .header-wrap .user-menu-item a:hover, .header .header-wrap .user-menu-item a:focus, .header .header-wrap .logout-menu-item a:hover, .header .header-wrap .logout-menu-item a:focus {
+      color: #0088cc;
+      text-decoration: none; }
+.header .header-wrap .user-menu-item {
+  line-height: 74px; }
+
 #logo {
   width: 150px;
-  display: inline-block; }
+  display: inline-block;
+  float: left; }
 
 /*********************
 NAVIGATION STYLES
@@ -446,14 +472,14 @@ This is the desktop size. It's larger than an iPad so it will only
 be seen on the Desktop.
 
 ******************************************************************/
-.wrap {
+.wrap, .wrap-clef {
   width: 1040px; }
 
-.page-template-page-promo article.hentry, .page-template-page-promo-demo article.hentry {
+.page-template-page-promo article.hentry, .page-template-page-promo-demo article.hentry, .page-template-page-promo-demo-new article.hentry {
   flex-wrap: nowrap; }
-.page-template-page-promo .entry-content, .page-template-page-promo-demo .entry-content {
+.page-template-page-promo .entry-content, .page-template-page-promo-demo .entry-content, .page-template-page-promo-demo-new .entry-content {
   max-width: 68%; }
-.page-template-page-promo .right-section, .page-template-page-promo-demo .right-section {
+.page-template-page-promo .right-section, .page-template-page-promo-demo .right-section, .page-template-page-promo-demo-new .right-section {
   max-width: 32%;
   margin-top: 2.2em; }
 

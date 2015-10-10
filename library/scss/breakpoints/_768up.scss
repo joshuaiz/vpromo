@@ -48,11 +48,37 @@ LAYOUT & GRID STYLES
 HEADER STYLES
 *********************/
 
-.header {}
+.header {
+	.header-wrap {
+		// display: inline-block;
+		.account-outer {
+			float: right;
+			position: relative;
+    		// top: 18px;
+		}
+		.user-menu-item, .logout-menu-item {
+			display: inline-block;
+			a {
+				color: #fff;
+				&:hover, &:focus {
+					color: $link-color;
+					text-decoration: none;
+				}
+			}
+		}
+		.user-menu-item {
+			// margin-right: 1.5em;
+			line-height: 74px;
+		}
+		.logout-menu-item {
+		}
+	}
+}
 
 	#logo {
 		width: 150px;
 		display: inline-block;
+		float: left;
 	}
 
 /*********************

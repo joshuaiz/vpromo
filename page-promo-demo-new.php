@@ -1,6 +1,6 @@
 <?php
 /*
- Template Name: Promo Page
+ Template Name: Promo Demo New
 */
 ?>
 
@@ -138,83 +138,6 @@ $cloudfront_domain_name = 'http://d3t045wtbqais6.cloudfront.net/';    // make su
 
         <div id="inner-content" class="wrap cf">
 
-            <?php /* Logged-in check */ ?>
-
-            <?php if ( !is_user_logged_in() ) { ?>
-
-                <article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-
-                    <section class="entry-content cf" itemprop="articleBody">
-
-                        <header class="article-header promo-header cf">
-
-                            <h1>Please log in.</h1>
-
-                        </header>
-
-                        <h2><?php random_loggedout(); ?></h2>
-
-                        <div class="login-form">
-
-                            <?php echo do_shortcode('[clef_render_login_button]' ); ?> <a class="small" href="/clef/">What's this?</a>
-
-                            <p><a class="small login-password" href="<?php echo wp_login_url(); ?>" title="Login">Login with a password</a></p>
-
-                        </div>
-
-                        <section class="recent-posts">
-
-                            <h3>Recent Promos</h3>
-        
-                                <ul class="recent-promos nostyle">
-        
-                               <?php 
-                               // WP_Query arguments
-                               $args = array (
-                                   'post_type'              => array( 'promos' ),
-                                   'post_status'            => array( 'publish' ),
-                                   'posts_per_page'         => '8',
-                                   'cat'                    => '-3',
-                               );
-                               
-                               // The Query
-                               $query = new WP_Query( $args );
-                               
-                               // The Loop
-                               if ( $query->have_posts() ) {
-                                   while ( $query->have_posts() ) {
-                                       $query->the_post(); ?>
-           
-                                       <li>                            
-                                       
-                                       <?php $image = get_field('promo_image');
-                                       
-                                       if( !empty($image) ): ?>
-                                       
-                                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="96" height="96" />
-                                       
-                                       <?php endif; ?>
-           
-                                       <p><?php the_title(); ?></p>
-           
-                                       </li>
-
-                                   <?php }
-                               } else {
-                                   // no posts found
-                               }
-                               
-                               // Restore original Post Data
-                               wp_reset_postdata(); ?>
-           
-                        </section>
-
-                    </section>        
-
-                </article>
-
-            <?php } else { ?>
-
         <main id="main" class="m-all t-all d-all cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -338,8 +261,6 @@ $cloudfront_domain_name = 'http://d3t045wtbqais6.cloudfront.net/';    // make su
                                 <?php $current_user = wp_get_current_user(); ?>
                                 <?php $slug = $current_user->user_login; ?>
 
-                                <h2><span class="review-nickname"><?php echo $current_user->nickname; ?></span>, <span class="review-thanks"></span></h2>
-
                                 <p class="small">For individual track downloads, use the download buttons next to each track on the right →</p>
 
                                
@@ -354,8 +275,6 @@ $cloudfront_domain_name = 'http://d3t045wtbqais6.cloudfront.net/';    // make su
                                 <a href="<?php echo $download_signed_url; ?>" class="dropbox-saver">Save to Dropbox</a>
 
                                 <p>Remember, if you <span class="icon-heart"></span> it, chart it!</p>
-
-                                <p><a href="/user/<?php echo $slug; ?>/">Go to your account</a> to update your info or react to more promos.</p>
 
                             </div><?php /* End .promo-download */ ?>
 
@@ -511,8 +430,6 @@ $cloudfront_domain_name = 'http://d3t045wtbqais6.cloudfront.net/';    // make su
                 </article>
 
                 <?php endif; ?>
-
-                 <?php } ?>
 
             </main><?php /* End #main */ ?>
 
@@ -713,7 +630,7 @@ function checkAndSubmit() {
 // Wavesurfer Code
 
 jQuery(document).ready(function($) {
-    
+
     var wavesurfer = Object.create(WaveSurfer);
     var play = $('.icon-play3');
     var playerstatecontainer = $('.player-container');

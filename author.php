@@ -108,29 +108,9 @@
   										if (isset($viewed['catalog_number'])) {
   											$ccat = $viewed['catalog_number'];
   										}
-  										// var_dump($viewed);
-
-  										// print_r($viewed[0]);
-  										// $viewed = maybe_unserialize($viewed);
-
-
-
-  										// var_dump($viewed);
-  										// $sub_date = $viewed[0];
-
-  										// print_r($sub_date);
-
-  										// print_r(array_values($viewed));
-
-//   										if (isset($viewed['sub_date'])) {
-//     $sub_date = $viewed['sub_date'];
-// } else {
-// 	$sub_date = $viewed['sub_date'];
-// }
+  										
   										
 										$time = strtotime($sdate);
-
-											// Print the array
 											
 
 										// Get local timezone
@@ -148,7 +128,7 @@
 
                                         		<?php if (isset($ccat) && $ccat == $cat) { ?>
 	
-                                            		<img class="<?php echo $class; ?>" src="<?php echo $image['url']; ?>"  />
+                                            		<img class="promo-viewed" class="<?php echo $class; ?>" src="<?php echo $image['url']; ?>"  />
 
                                             	<?php } else { ?>
 

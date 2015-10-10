@@ -444,24 +444,24 @@ function change_author_permalinks() {
 }
 add_action('init','change_author_permalinks');
 
-add_filter('wp_nav_menu_items','add_custom_in_menu', 10, 2);
-function add_custom_in_menu( $items, $args ) {
-  if ( is_user_logged_in() ) {
-  $current_user = wp_get_current_user();
-  $slug = $current_user->user_login;
+// add_filter('wp_nav_menu_items','add_custom_in_menu', 10, 2);
+// function add_custom_in_menu( $items, $args ) {
+//   if ( is_user_logged_in() ) {
+//   $current_user = wp_get_current_user();
+//   $slug = $current_user->user_login;
 
-  $avatar = get_avatar( $current_user->user_email, 24 );
-  $logout = wp_logout_url( home_url() );
+//   $avatar = get_avatar( $current_user->user_email, 24 );
+//   $logout = wp_logout_url( home_url() );
                     
                     
-    if( $args->theme_location == 'main-nav')  {
+//     if( $args->theme_location == 'main-nav')  {
          
-        $items .=  '<li class="user-menu-item menu-item"><a href="/user/' . $slug . '/' . '">' . $avatar . 'My Account' . '</a></li><li class="logout-menu-item menu-item sub-menu-item"><a href="' . $logout . '">Log Out</a></li>';
+//         $items .=  '<li class="user-menu-item menu-item"><a href="/user/' . $slug . '/' . '">' . $avatar . 'My Account' . '</a></li><li class="logout-menu-item menu-item sub-menu-item"><a href="' . $logout . '">Log Out</a></li>';
   
-    }
-    return $items;
-  }
-}
+//     }
+//     return $items;
+//   }
+// }
 
 add_action('wp_ajax_myprefix_delete_user','myprefix_delete_user_cb');
 function myprefix_delete_user_cb(){
@@ -496,13 +496,38 @@ $quotes = array(
 "Bless your poor typing little heart.",
 "Well hai, welcomes to mi sitez. I helps you find stuffz.",
 "Ain't no party like a 404 party.",
-"In Epic404, no one can hear you scream.",
+"In Epic 404, no one can hear you scream.",
 "The who with the what now? Let's try this again.",
 "You've done ended up here. Again."
 );
 
 echo $quotes[rand(0, count($quotes) - 1)];
 }
+
+function random_loggedout() {
+$quotes = array(
+"Ummmmmmmm. We don't know you...yet. Please login.",
+"Pretty sneaky. But you're gonna have to log in first.",
+"Shyeeeeeeah, right. Just log in, and you'll be all set.",
+"You're all \"Promo Me.\" And we're all \"Log in first.\"",
+"Whoooops. You need to log in with the thingy.",
+"Just one more step and you can promo.",
+"Good music awaits...for those who log in.",
+"You're all \"Promo Me.\" And we're all \"Log in first.\"",
+"I'm sure you're cool but you need to authenticate.",
+"Do the logging in thing and then you can do the music thing.",
+"Music wants to be free. But you still need to log in first.",
+"Do you even log in, bro?",
+"You're all \"Promo Me.\" And we're all \"Log in first.\"",
+"Logging in is kinda lumberjacky. It has \"log\" in it.",
+"Every time you log in, a big booty girl starts jackin'.",
+"Good things come to those who log in.",
+);
+
+echo $quotes[rand(0, count($quotes) - 1)];
+}
+
+
 
 function disable_wp_emojicons() {
 
