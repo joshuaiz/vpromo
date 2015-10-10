@@ -13,7 +13,7 @@
 
 		<?php // all js scripts are loaded in library/bones.php ?>
 
-		<?php if ( is_page_template(array('page-promo.php','page-promo-demo.php', 'author.php' ) ) || is_author() ) { ?>
+		<?php if ( is_page_template(array('page-promo.php','page-promo-demo.php', 'author.php', 'page-promo_163935.php' ) ) || is_author() ) { ?>
 		<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="bau0s330yo2yr4o"></script>
 		<?php } ?>
 

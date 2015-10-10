@@ -1989,7 +1989,7 @@ style a page via class
 .page-template-page-promo.logged-out .entry-content {
   width: 100%; }
 
-.page-template-page-promo article.hentry, .page-template-page-promo-demo article.hentry, .page-template-page-promo-demo-new article.hentry {
+.page-template-page-promo article.hentry, .page-template-page-promo-demo article.hentry, .page-template-page-promo-demo-new article.hentry, .page-promo article.hentry {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1998,16 +1998,16 @@ style a page via class
       -ms-flex-wrap: wrap;
           flex-wrap: wrap; }
 
-.page-template-page-promo .entry-content, .page-template-page-promo-demo .entry-content, .page-template-page-promo-demo-new .entry-content {
+.page-template-page-promo .entry-content, .page-template-page-promo-demo .entry-content, .page-template-page-promo-demo-new .entry-content, .page-promo .entry-content {
   max-width: 68%; }
 
-.page-template-page-promo .promo-review, .page-template-page-promo-demo .promo-review, .page-template-page-promo-demo-new .promo-review {
+.page-template-page-promo .promo-review, .page-template-page-promo-demo .promo-review, .page-template-page-promo-demo-new .promo-review, .page-promo .promo-review {
   margin-bottom: 1.5em; }
 
-.page-template-page-promo .promo-description p, .page-template-page-promo-demo .promo-description p, .page-template-page-promo-demo-new .promo-description p {
+.page-template-page-promo .promo-description p, .page-template-page-promo-demo .promo-description p, .page-template-page-promo-demo-new .promo-description p, .page-promo .promo-description p {
   font-size: 15px; }
 
-.page-template-page-promo .promo-form, .page-template-page-promo-demo .promo-form, .page-template-page-promo-demo-new .promo-form {
+.page-template-page-promo .promo-form, .page-template-page-promo-demo .promo-form, .page-template-page-promo-demo-new .promo-form, .page-promo .promo-form {
   margin-top: 1em; }
 
 .promo-player {
@@ -2114,7 +2114,6 @@ style a page via class
     margin-right: 6px; }
 
 .profile .user-avatar, .account .user-avatar, .author .user-avatar {
-  max-width: 400px;
   border-top: 1px solid #eee;
   padding: 1.5em 0 0; }
   .profile .user-avatar h3, .account .user-avatar h3, .author .user-avatar h3 {
@@ -2123,10 +2122,11 @@ style a page via class
     font-size: 12px; }
 
 .profile .profile-form, .account .profile-form, .author .profile-form {
-  padding-top: 0; }
+  padding-top: 0;
+  padding-left: 0; }
 
 .profile .gform_wrapper, .account .gform_wrapper, .author .gform_wrapper {
-  width: 400px; }
+  width: 300px; }
 
 .profile .gform_wrapper .top_label .gfield_description, .account .gform_wrapper .top_label .gfield_description, .author .gform_wrapper .top_label .gfield_description {
   padding: 0; }
@@ -3264,15 +3264,35 @@ come into play. Have fun!
   /*********************
 GENERAL STYLES
 *********************/
-  .page-template-page-promo .entry-content {
+  .page-template-page-promo .entry-content, .page-template-page-promo-demo .entry-content, .page-template-page-promo-demo-new .entry-content {
     max-width: 100%;
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap; }
-    .page-template-page-promo .entry-content .promo-wrap {
+    .page-template-page-promo .entry-content .promo-wrap, .page-template-page-promo-demo .entry-content .promo-wrap, .page-template-page-promo-demo-new .entry-content .promo-wrap {
       margin-top: 1.5em; }
-    .page-template-page-promo .entry-content .promo-player {
+    .page-template-page-promo .entry-content .promo-player, .page-template-page-promo-demo .entry-content .promo-player, .page-template-page-promo-demo-new .entry-content .promo-player {
       float: none; }
+  .profile .user-promos li, .account .user-promos li, .author .user-promos li {
+    width: 100%; }
+  #logo {
+    display: inline-block;
+    width: 150px; }
+  .header-wrap {
+    display: inline-block;
+    float: right;
+    position: relative;
+    top: 18px; }
+    .header-wrap .avatar {
+      position: relative;
+      top: 5px; }
+    .header-wrap .user-menu-item .user-meta {
+      top: 48px; }
+    .header-wrap .user-menu-item a {
+      color: #fff;
+      text-decoration: none; }
+      .header-wrap .user-menu-item a:hover, .header-wrap .user-menu-item a:focus {
+        color: #0088cc; }
   /*********************
 LAYOUT & GRID STYLES
 *********************/
@@ -3607,7 +3627,7 @@ be seen on the Desktop.
     max-width: 32%;
     margin-top: 2.2em; }
   .user-promos {
-    max-width: 680px; }
+    max-width: 50%; }
   .profile-form {
     max-width: 450px; } }
 

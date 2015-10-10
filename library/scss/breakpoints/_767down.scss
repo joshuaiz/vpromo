@@ -19,7 +19,7 @@ GENERAL STYLES
 
 body {}
 
-.page-template-page-promo {
+.page-template-page-promo, .page-template-page-promo-demo, .page-template-page-promo-demo-new {
 	.entry-content {
 		max-width: 100%;
 		flex-wrap: wrap;
@@ -34,6 +34,39 @@ body {}
 		// max-width: 32%;
 		// margin-top: 2.2em;
 	}
+}
+
+.profile .user-promos li, .account .user-promos li, .author .user-promos li {
+	width: 100%;
+}
+
+#logo {
+	display: inline-block;
+	width: 150px;
+}
+
+.header-wrap {
+	display: inline-block;
+    float: right;
+    position: relative;
+    top: 18px;
+    .avatar {
+    	position: relative;
+    	top: 5px;
+    }
+    .user-menu-item {
+    	.user-meta {
+    		// position: relative;
+    		top: 48px;
+    	}
+    	a {
+    		color: #fff;
+    		text-decoration: none;
+    		&:hover, &:focus {
+    			color: $apple-blue;
+    		}
+    	}
+    }
 }
 
 

@@ -1,6 +1,6 @@
 <?php
 /*
- Template Name: Promo Page
+ Template Name: Promo Page 163935
 */
 ?>
 
@@ -138,6 +138,8 @@ $cloudfront_domain_name = 'http://d3t045wtbqais6.cloudfront.net/';    // make su
 
         <div id="inner-content" class="wrap cf">
 
+            <?php /* Logged-in check */ ?>
+
             <?php if ( !is_user_logged_in() ) {
 
                 echo '<h2>Nope. You must be logged in to view this page.</h2>'; ?>
@@ -150,7 +152,7 @@ $cloudfront_domain_name = 'http://d3t045wtbqais6.cloudfront.net/';    // make su
 
             <?php } else { ?>
 
-        <main id="main" class="m-all t-all d-all cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+<main id="main" class="m-all t-all d-all cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -470,6 +472,7 @@ jQuery(document).ready(function($){
     $($select).show();
     });
 
+
     $('.promo-drop-down').insertAfter('.promo-affiliations');
 
     $('#input_2_9').attr('value', '');
@@ -503,7 +506,7 @@ function checkSize(){
 
 jQuery(document).ready(function($){
  
-    // var $formID = $('.gform_wrapper > form').attr('id');
+    var $formID = $('.gform_wrapper > form').attr('id');
     $('.gform_button').click(function (e) {
     e.preventDefault();
 
@@ -514,13 +517,13 @@ jQuery(document).ready(function($){
 function checkAndSubmit() {
 
     var $formID = $('.gform_wrapper > form').attr('id');
-    console.log($formID);
+    // console.log($formID);
     var review = $('.promo-review').find( 'textarea').first().val();
     var rating = $('input[name="score"]').val();
     var favorite = $('.promo-drop-down').find('select').first().val();
   
     if (!review ) {
-        // console.log('nope');
+        console.log('nope');
         // doesn't work with variable for some reason
         $('.promo-review').find( 'textarea').first().css('border', '2px solid red');
         $('.promo-review').qtip({
@@ -573,7 +576,7 @@ function checkAndSubmit() {
         });
     }
     if (!favorite ) {
-        // console.log('no favorite');
+        console.log('no favorite');
         // doesn't work with variable for some reason
         $('.promo-drop-down').find('select').first().css('border', '2px solid red');
         $('.promo-drop-down').find('select').first().qtip({
@@ -598,7 +601,7 @@ function checkAndSubmit() {
     
         });
     }
-    else if (review && favorite && rating) {
+    else if (review && favorite && rating){
 
         var submit = $.ajax({
     
@@ -609,7 +612,6 @@ function checkAndSubmit() {
             success: function() {
             // callback code here
             console.log('success');
-           
             var a = Math.random() + ""
             var rand1 = a.charAt(5)
             quotes = new Array
@@ -637,6 +639,7 @@ function checkAndSubmit() {
             $('.download').fadeIn(200);
             $('.review-thanks').html(quote);
             
+            
             }
         })
 
@@ -648,7 +651,6 @@ function checkAndSubmit() {
 // Wavesurfer Code
 
 jQuery(document).ready(function($) {
-    
     var wavesurfer = Object.create(WaveSurfer);
     var play = $('.icon-play3');
     var playerstatecontainer = $('.player-container');

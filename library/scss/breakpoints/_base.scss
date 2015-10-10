@@ -182,7 +182,7 @@ style a page via class
 }
 
 
-.page-template-page-promo, .page-template-page-promo-demo, .page-template-page-promo-demo-new {
+.page-template-page-promo, .page-template-page-promo-demo, .page-template-page-promo-demo-new, .page-promo {
 	article.hentry {
 		display: flex;
 		flex-wrap: wrap;
@@ -354,7 +354,7 @@ style a page via class
 		}
 	}
 	.user-avatar {
-		max-width: 400px;
+		// max-width: 400px;
 		border-top: 1px solid #eee;
 		h3 {
 			margin-top: 0;
@@ -369,9 +369,10 @@ style a page via class
 	}
 	.profile-form {
 		padding-top: 0;
+		padding-left: 0;
 	}
 	.gform_wrapper {
-		width: 400px;
+		width: 300px;
 	}
 	.gform_wrapper .top_label .gfield_description {
 		padding: 0;
